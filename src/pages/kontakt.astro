@@ -1,0 +1,44 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+        <div class="container">
+            <div class="left">
+                <!-- Calendly Link-Widget Beginn -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/fitflow-hikj/testereignis'});return false;">Zeitplan Zeitfenster</a>
+<!-- Calendly Link-Widget Ende -->
+            </div>
+            <div class="right">
+                Test
+            </div>
+        </div>
+
+		<Footer />
+	</body>
+</html>
+
+
+<style>
+    .container {
+        display: grid;
+
+}
+
+
+
+    .left .right {
+        border: 1px solid black;
+    }
+</style>

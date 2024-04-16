@@ -1,0 +1,33 @@
+---
+import type {ImageMetadata} from 'astro';
+import {Image} from 'astro:assets';
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+    icon: string;
+    headline: string;
+}
+
+const {icon, headline} = Astro.props;
+---
+<div class="benefit-card">
+    <Icon class="centered-icon" name={icon} />
+    <h3>{headline}</h3>
+    <p>
+        <slot />
+    </p>
+
+</div>
+
+<style>
+    h3 {
+        font-size: 1.5em;
+    }
+    .centered-icon {
+        color: var(--bootcamp-dark-orange);
+        font-size: 8em;
+    }
+    .benefit-card {
+        text-align: center;
+    }
+</style>

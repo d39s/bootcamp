@@ -1,0 +1,65 @@
+---
+interface Props {
+    location: string;
+    headline: string;
+    travelDate: string;
+}
+
+const {headline, travelDate, location} = Astro.props;
+---
+
+<div class="align-center">
+    <h2>{headline}</h2>
+    <h1>{location}</h1>
+    <p class="retreat-date">
+        {travelDate}
+    </p>
+    <a href="/kontakt"><button class="button" type="button">Zur Buchung</button></a>
+    <button class="button" type="button">Instagram</button>
+
+</div>
+
+<style>
+    .align-center {
+        text-align: center;
+        margin-top: 20px;
+        color: var(--paragraph);
+    }
+
+    .align-center > h2 {
+        font-family: CormorantGaramond;
+        font-size: 1.0em;
+    }
+    .retreat-date {
+        font-size: 1.5em;
+    }
+
+    .button {
+    font-family: "CormorantGaramond", Sans-serif;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 25px 80px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--other);
+    border-radius: 0px 0px 0px 0px;
+    transition: all 0.5s ease-in;
+    background-color: var(--background1);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+    .button:hover {
+        cursor: pointer;
+        background-color: var(--other);
+        border-style: solid;
+        border-width: 2px 2px 2px 2px;
+        border-color: var(--accent);
+        transition: all 0.1s ease-in;
+    }
+</style>
+
+
+

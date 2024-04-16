@@ -1,0 +1,127 @@
+---
+import Retreat from '../layouts/Retreat.astro';
+import ImageGrid from '../components/ImageGrid.astro';
+import RetreatHeader from '../components/RetreatHeader.astro';
+import ImageTextLeft from '../components/ImageTextLeft.astro';
+import ImageTextRight from '../components/ImageTextRight.astro';
+import RetreatTeamCard from '../components/RetreatTeamCard.astro';
+---
+
+<Retreat>
+    <div class="spacer">
+        <RetreatHeader  headline='Yoga-Retreat' 
+                        location='Spanien - Andaluisen'
+                        travelDate='31.03.2024 - 01.04.2024'
+        />
+    </div>
+    <div></div>
+        <ImageGrid  imagePaths={[
+                        '/src/assets/retreat1/blog-placeholder-2.jpg',
+                        '/src/assets/retreat1/blog-placeholder-3.jpg',
+                        '/src/assets/retreat1/blog-placeholder-4.jpg',
+                        '/src/assets/retreat1/blog-placeholder-5.jpg'
+                    ]} 
+        />
+    </div>
+    <div class="headline">
+        <h1 class="spacer">Was ist enthalten?</h1>
+        <ImageTextLeft  imagePath='/src/assets/retreat1/blog-placeholder-2.jpg'
+                        headline='Lorem ipsum'>
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </p>
+        </ImageTextLeft>
+    </div>
+    <div class="headline">
+        <h1 class="spacer">Dein Team</h1>
+        <div class="teamgrid">
+            <div>
+                <RetreatTeamCard    imagePath='/src/assets/retreat1/laura.jpg'
+                                    name='Laura Heinz'
+                                    titel='Sportskanone'
+                                    instagram='fitflowbylaura'>
+                
+                    Text zum Teammitglied oder Facts über Laura.
+                </RetreatTeamCard>
+            </div>
+            <div>
+                <RetreatTeamCard    imagePath='/src/assets/retreat1/laura.jpg'
+                                    name='Laura Heinz'
+                                    titel='Sportskanone'
+                                    instagram='fitflowbylaura'>
+                
+                    Text zum Teammitglied oder Facts über Laura.
+                </RetreatTeamCard>
+            </div>
+            <div>
+                <RetreatTeamCard    imagePath='/src/assets/retreat1/laura.jpg'
+                                    name='Laura Heinz'
+                                    titel='Sportskanone'
+                                    instagram='fitflowbylaura'>
+                
+                    Text zum Teammitglied oder Facts über Laura.
+                    Wie verhalten sich denn hier unterschiedliche Längen?
+                    Sollte glaube ich kein größeres Problem sein...
+                </RetreatTeamCard>
+            </div>
+        </div>
+    </div>
+    <div class="headline div-spacer">
+        <h1 class="spacer divider">Was ist nicht enthalten?</h1>
+        <ImageTextRight  imagePath='/src/assets/retreat1/blog-placeholder-2.jpg'
+                        headline='Lorem ipsum'>
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </p>
+        </ImageTextRight>
+    </div>
+
+</Retreat>
+
+<style>
+    .headline h1{
+        text-align: center;
+        color: var(--paragraph);
+        font-size: 2.4em;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .spacer {
+        margin-top: 2.5em;
+        margin-bottom: 1.3em;
+    }
+    .div-spacer {
+        margin-bottom: 2.0em;
+    }
+    .teamgrid {
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr ;
+        margin: auto;    
+    }
+</style>

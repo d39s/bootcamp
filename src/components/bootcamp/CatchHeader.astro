@@ -1,0 +1,51 @@
+---
+import type {ImageMetadata} from 'astro';
+import {Image} from 'astro:assets';
+
+interface Props {
+    topic: string;
+    headline: string;
+}
+
+const {topic, headline} = Astro.props;
+//const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
+
+---
+<div class="catch-header">
+
+    <div class="container">
+        <div class="topic">
+            {topic}
+        </div>
+        <div class="headline">
+            {headline}
+        </div>
+    </div>
+</div>
+
+<style>
+    .catch-header {
+        background-color: var(--bootcamp-background);
+        text-align: center;
+        padding-bottom: 6em;
+        padding-top: 4em;
+    }
+    .container {
+
+    }
+    .topic {
+        color: var(--bootcamp-dark-orange);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size: 0.8em;
+        margin-bottom: 1em;
+        
+    }
+    .headline {
+        color: var(--bootcamp-light-orange);
+        width: 50%;
+        margin: 0 auto;
+        font-family: "CormorantGaramond";
+        font-size: 4em;
+    }
+</style>

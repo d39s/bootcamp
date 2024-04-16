@@ -1,0 +1,153 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CatchHeader from '../components/bootcamp/CatchHeader.astro';
+import BenefitsCard from '../components/bootcamp/BenefitsCard.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+            <CatchHeader topic="Firmen / Vereine" headline="Ihre Suche nach Firmenfitness war erfolgreich" />
+
+            <div class="container col-2 section">
+                <div class="card-1">
+                    <h3>
+                        Wir <span class="highlighter">bewegen</span> Ihr Team - Firmenfitness
+                    </h3>
+                    <p class="tagline">
+                        Indoor | Outdoor | Online
+                    </p>
+                    <p>
+                        Wir bringen Ihr Team ins Schwitzen und sorgen für mehr Leistungsfähigkeit bei Ihren Mitarbeiter:innen.
+                    </p>
+                    <p>
+                        Unser Fitnessprogramm basiert auf funktionellem Ganzkörpertraining mit Zusatzequipment.
+                    </p>
+                    <a href="https://cdn.chicken69.dev/stuff/yoga-flyer.pdf" target="_blank">
+                        <button class="button-main">
+                            Mehr Erfahren - Fitness
+                        </button>
+                    </a>
+                </div>
+                <div class="card-1">
+                    <h3>
+                        Wir <span class="highlighter">entspannen</span> Ihr Team - Firmenyoga
+                    </h3>
+                    <p class="tagline">
+                        Indoor | Outdoor | Online
+                    </p>
+                    <p>
+                        In der heutigen Arbeitswelt ist Stress allgegenwärtig.
+                    </p>
+                    <p>
+                        Unser Yoga-Programm bietet Ihren Mitarbeiter:innen die Möglichkeit, einen mentalen und physischen Ausgleich zu schaffen.
+                    </p>
+                    <a href="https://cdn.chicken69.dev/stuff/flyer_bootcamp.pdf" target="_blank">
+                        <button class="button-main">
+                            Mehr Erfahren - Yoga
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="container col-2 section">
+                <div class="card-1 centered more-space">
+                    <h3>Firmenfitness & Yoga</h3>
+                    <p>
+                        Suchen Sie nach einer maßgeschneiderten Lösung für die Gesundheitsförderung in Ihrem Unternehmen?
+                        Entdecken Sie unsere vielseitigen Angebote, die BootCamp und Yoga in flexiblen Formaten anbieten:
+                        Online, Indoor und Outdoor. 
+                        Unsere Firmenfitnessprogramme sind darauf ausgerichtet, die Bedürfnisse und den Zeitplan Ihres Unternehmens zu berücksichtigen.
+                    </p>
+                    <h4>
+                        Wir bieten:
+                    </h4>
+                    <p>
+                        <b>Online-Kurse:</b> Mit unseren interaktiven Online-Kursen können Ihre Mitarbeiter:innen von überall aus teilnehmen. 
+                        Egal ob im Homeoffice oder unterwegs, unsere qualifizierten Trainer:innen führen die Teilnehmenden durch effektive BootCamp- und Yogaeinheiten.
+                    </p>
+                    <p>
+                        <b>Indoortraining:</b> Für Unternehmen mit eigenen Räumlichkeiten bieten wir maßgeschneiderte Indoor-BootCamp- und Yogakurse an. 
+                        So können Ihre Mitarbeitenden in der gewohnten Umgebung trainieren und von professioneller Anleitung profitieren.
+                    </p>
+                    <p>
+                        <b>Outdoortraining:</b> Unsere Outdoor-BootCamp- und Yogakurse ermöglichen es Ihren Mitarbeiter:innen, die frische Luft zu genießen und gleichzeitig ihre Fitness zu steigern. 
+                        Wir organisieren Trainings in nahegelegenen Parks oder auf Ihrem Firmengelände.
+                    </p>
+                </div>
+                <div class="video">
+                    <video poster="" autoplay="1" loop="1" muted="1" playsinline="1" src="/videos/bootcamp-firma.mp4"></video>
+                </div>
+            </div>
+            <div class="container section">
+                <h2>Ihre Vorteile</h2>
+                <div class="col-4">
+                    <BenefitsCard icon='mdi:smiley' headline='Zertifizierte Trainer:innen'>
+                        Wir sind Expert:innen auf den Gebieten Functional-Training und Yoga und sorgen für effektive Trainingseinheiten.
+                    </BenefitsCard>
+                    <BenefitsCard icon='mdi:heart' headline='Gesundheitsförderung'>
+                        Steigern Sie das Wohlbefinden Ihrer Mitarbeiter:innen und reduzieren Sie Fehlzeiten durch einen aktiven und gesunden Lebensstil.
+                    </BenefitsCard>
+                    <BenefitsCard icon='mdi:plus' headline='Teamstärkung'>
+                        BootCamp und Yoga fördern Teamarbeit und Zusammenhalt, was die Unternehmenskultur stärkt.
+                    </BenefitsCard>
+                    <BenefitsCard icon='mdi:clock' headline='Flexibilität'>
+                        Unsere Programme werden an die Bedürfnisse und Fitnesslevel Ihrer Mitarbeitenden angepasst.
+                    </BenefitsCard>
+                </div>
+            </div>
+
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+    .card-1 p {
+        line-height: 2em;
+        font-size: 0.9em;
+    }
+    .card-1.more-space p {
+        line-height: 2.6em;
+        font-size: 0.9em;
+    }
+    .card-1.centered {
+        align-self: center;
+    }
+    .video {
+        border-radius: 70px;
+        overflow: hidden;
+    }
+    .tagline {
+        color: var(--bootcamp-dark-orange);
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: 0.8em;
+    }
+    .section {
+        margin-top: 5em;
+        margin-bottom: 5em;
+    }
+    h3 {
+        font-size: 2.0em;
+        font-weight: 1000;
+    }
+    .col-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 90px;
+    }
+    .col-4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 50px;
+    }
+</style>
