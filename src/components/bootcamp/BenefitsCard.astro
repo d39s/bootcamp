@@ -13,7 +13,7 @@ const {icon, headline} = Astro.props;
 <div class="benefit-card">
     <Icon class="centered-icon" name={icon} />
     <h3>{headline}</h3>
-    <p>
+    <p class="component-text">
         <slot />
     </p>
 
@@ -31,6 +31,12 @@ const {icon, headline} = Astro.props;
         text-align: center;
         border: 1px dashed var(--bootcamp-dark-orange);
         border-radius: 40px;
-        padding: 1em 2em 1em 2em
+        width: 100%;
+
+        margin-left: 1em;   
+        margin-right: 1em;
+    }
+    .component-text {
+        line-height: 1.5em;
     }
 </style>
