@@ -1,0 +1,46 @@
+---
+import type {ImageMetadata} from 'astro';
+import {Image} from 'astro:assets';
+
+import partner_rb from "../../assets/partner/partner-rb.svg";
+import partner_ferchau from "../../assets/partner/partner-ferchau.svg";
+import partner_helios from "../../assets/partner/partner-helios.svg";
+import partner_prisma from "../../assets/partner/partner-prisma.svg";
+
+interface Props {
+
+}
+
+const {} = Astro.props;
+---
+
+
+<div class="col-4 dashed-border">
+    <div><Image src={partner_rb} alt="Logo Red Bull Leipzig" height={90}/></div>
+    <div><Image src={partner_ferchau} alt="Logo Ferchau Leipzig" height={45}/></div>
+    <div><Image src={partner_helios} alt="Logo Helios Leipzig" height={40}/></div>
+    <div><Image src={partner_rb} alt="Logo Red Bull Leipzig" height={100}/></div>
+    <div><Image src={partner_ferchau} alt="Logo Ferchau Leipzig" height={50}/></div>
+    <div><Image src={partner_helios} alt="Logo Helios Leipzig" height={40}/></div>
+    <div><Image src={partner_helios} alt="Logo Helios Leipzig" height={40}/></div>
+</div>
+
+
+
+<style>
+.dashed-border {
+    grid-auto-rows: 1fr;
+}
+
+.dashed-border > div {
+    border: 1px dashed var(--bootcamp-dark-orange);
+    border-radius: 40px;
+    padding: 1.1em 1em 1.5em;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.dashed-border > img {
+
+}
+</style>
