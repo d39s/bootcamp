@@ -4,7 +4,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CatchHeader from '../components/bootcamp/CatchHeader.astro';
 import BenefitsCard from '../components/bootcamp/BenefitsCard.astro';
+import PartnerCard from '../components/bootcamp/PartnerCard.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { Image } from "astro:assets"
+import event from "../assets/firmen/event.png"
 ---
 
 <!doctype html>
@@ -32,7 +35,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                         Unser Fitnessprogramm basiert auf funktionellem Ganzkörpertraining mit Zusatzequipment.
                     </p>
                     <a href="https://cdn.chicken69.dev/stuff/yoga-flyer.pdf" target="_blank">
-                        <button class="button-main">
+                        <button class="button-main button-double-height">
                             Mehr Erfahren - Fitness
                         </button>
                     </a>
@@ -51,7 +54,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                         Unser Yoga-Programm bietet Ihren Mitarbeiter:innen die Möglichkeit, einen mentalen und physischen Ausgleich zu schaffen.
                     </p>
                     <a href="https://cdn.chicken69.dev/stuff/flyer_bootcamp.pdf" target="_blank">
-                        <button class="button-main">
+                        <button class="button-main button-double-height">
                             Mehr Erfahren - Yoga
                         </button>
                     </a>
@@ -90,19 +93,48 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             <div class="container section">
                 <h2>Ihre Vorteile</h2>
                 <div class="col-4">
-                    <BenefitsCard icon='mdi:smiley' headline='Zertifizierte Trainer:innen'>
+                    <BenefitsCard icon='ph:smiley' headline='Zertifizierte Trainer:innen'>
                         Wir sind Expert:innen auf den Gebieten Functional-Training und Yoga und sorgen für effektive Trainingseinheiten.
                     </BenefitsCard>
-                    <BenefitsCard icon='mdi:heart' headline='Gesundheitsförderung'>
+                    <BenefitsCard icon='ph:heart' headline='Gesundheitsförderung'>
                         Steigern Sie das Wohlbefinden Ihrer Mitarbeiter:innen und reduzieren Sie Fehlzeiten durch einen aktiven und gesunden Lebensstil.
                     </BenefitsCard>
                     <BenefitsCard icon='mdi:plus' headline='Teamstärkung'>
                         BootCamp und Yoga fördern Teamarbeit und Zusammenhalt, was die Unternehmenskultur stärkt.
                     </BenefitsCard>
-                    <BenefitsCard icon='mdi:clock' headline='Flexibilität'>
+                    <BenefitsCard icon='ph:clock' headline='Flexibilität'>
                         Unsere Programme werden an die Bedürfnisse und Fitnesslevel Ihrer Mitarbeitenden angepasst.
                     </BenefitsCard>
                 </div>
+            </div>
+            <div class="container section">
+                <h2>Events</h2>
+                <div class="col-2">
+                    <div class="video">
+                        <Image src={event} alt="Gruppenbild von Sportlern vor dem Leipziger Völkerschlachtdenkmal" />
+                    </div>
+                    <div class="card-1">
+                        <h3>Der Erfolg Ihres Unternehmens hängt von der <span class="highlighter">Energie und Ausdauer</span> ihre Mitarbeiter:innen ab!</h3>
+                        <p>Sie möchten mit ihrem Verein oder ihrem Unternehmen ein spezielles Event organisieren?</p>
+                        <p>Wir haben verschiedene Angebote: </p>
+                        <ul>
+                            <li>BootCamp & Yoga Einheiten</li>
+                            <li>Workshops & Vorträge (z.B Mental Health, Stress Management, gesunde Ernährung etc.)</li>
+                            <li>Teambuilding-Maßnahmen</li>
+                        </ul>
+                        <p>Wir stellen Ihnen gern ein individuelles Angebot zusammen.</p>
+                        <a href="mailto:franzi.thomas@freenet.de">
+                            <button class="button-main button-max-width">E-Mail schreiben</button>
+                        </a>
+                        <a href="tel:+49%20173%205145044">
+                            <button class="button-main button-max-width">Jetzt anrufen</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container section">
+                <h2>Unsere Partner</h2>
+                <PartnerCard />
             </div>
 
 		</main>
@@ -111,9 +143,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 </html>
 
 <style>
+    .button-double-height {
+        height: 4em;
+    }
     .card-1 p {
         line-height: 2em;
         font-size: 0.9em;
+    }
+    .card-1 ul, .card-1 ol {
+        line-height: 2em;
+        font-size: 0.9em;
+        padding-left: 1.1em;
     }
     .card-1.more-space p {
         line-height: 2.6em;
@@ -122,6 +162,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     .card-1.centered {
         align-self: center;
     }
+
     .video {
         border-radius: 70px;
         overflow: hidden;
@@ -136,18 +177,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         margin-top: 5em;
         margin-bottom: 5em;
     }
+    h2 {
+        margin-bottom: 0.6em;
+    }
     h3 {
         font-size: 2.0em;
         font-weight: 1000;
-    }
-    .col-2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 90px;
-    }
-    .col-4 {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 30px;
     }
 </style>
