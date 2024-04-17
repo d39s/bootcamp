@@ -116,6 +116,15 @@ background-color: var(--bootcamo-background-light);
   text-decoration-color: var(--bootcamp-dark-orange);
 }
 
+.section {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+.unstyled a {
+  text-decoration: none;
+}
+
 h1,
 h2,
 h3,
@@ -232,15 +241,28 @@ hr {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 90px;
+  grid-auto-rows: 1fr;
 }
 .col-4 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 30px;
+  grid-auto-rows: 1fr;
 }
 
+.tagline {
+  color: var(--bootcamp-dark-orange);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.8em;
+}
 
-
+.benefit-card {
+  text-align: center;
+  border: 1px dashed var(--bootcamp-dark-orange);
+  border-radius: 40px;
+  padding: 1.1em 1em 1.5em;
+}
 
 .sr-only {
 	border: 0;

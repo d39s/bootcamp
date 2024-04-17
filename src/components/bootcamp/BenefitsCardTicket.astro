@@ -6,24 +6,26 @@ import { Icon } from 'astro-icon/components'
 interface Props {
     icon: string;
     headline: string;
+    price: string;
+    tagline: string;
 }
 
-const {icon, headline} = Astro.props;
+const {icon, headline, price, tagline} = Astro.props;
 ---
-<div class="benefit-card">
     <Icon class="centered-icon" name={icon} />
-    <h3>{headline}</h3>
+    <h3>{headline}<br />{price}</h3>
+    <p class="tagline">{tagline}</p>
     <p class="component-text">
         <slot />
     </p>
 
-</div>
 
 <style>
     h3 {
         font-size: 1.0em;
-        min-height: 2.2em;
+
         font-family: 'Poppins';
+        line-height: 1.5em;
     }
     .centered-icon {
         color: var(--bootcamp-dark-orange);
@@ -36,5 +38,9 @@ const {icon, headline} = Astro.props;
         font-weight: 300;
         font-size: 0.9em;
         margin: 0;
+    }
+    .tagline {
+        letter-spacing: 0.1em;
+        font-size: 0.7em;
     }
 </style>

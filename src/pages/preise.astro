@@ -1,0 +1,162 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import CatchHeader from '../components/bootcamp/CatchHeader.astro';
+import BenefitsCard from '../components/bootcamp/BenefitsCard.astro';
+import BenefitsCardTicket from '../components/bootcamp/BenefitsCardTicket.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+            <CatchHeader topic="Preisübersicht" headline="Tickets & Memberships" />
+            <div class="container section">
+                <h2>Tickets</h2>
+                <p class="p-spacer p-line">
+                    Die Gültigkeit der Tickets beträgt nach Kauf sechs Monate.
+                </p>
+                <div class="col-4 unstyled">
+                    <a href="/" target="_blank" class="benefit-card">
+                        <BenefitsCardTicket icon='mdi:ticket' headline='Onlineticket' price='6,99€' tagline='Online'>
+                            Das Ticket gilt für alle Onlineklassen
+                        </BenefitsCardTicket>
+                    </a>
+                    <a href="/" target="_blank" class="benefit-card">
+                        <BenefitsCardTicket icon='mdi:ticket' headline='Outdoorticket' price='11,99€' tagline='Online | Outdoor'>
+                            Das Ticket gilt für alle Outdoor- und Onlineklassen.
+                        </BenefitsCardTicket>
+                    </a>
+                    <a href="/" target="_blank" class="benefit-card">
+                        <BenefitsCardTicket icon='mdi:ticket' headline='Indoorticket' price='15,99€'tagline='Online | Outdoor | Indoor'>
+                            Das Ticket gilt für alle Indoor-, Outdoor- und Onlineklassen
+                        </BenefitsCardTicket>
+                    </a>
+                </div>
+            </div>
+            <div class="container section">
+                <h2>Unlimited Online</h2>
+                <p class="p-spacer p-line">
+                    Nimm so oft du möchtest Online BootCamp Training teil. Nach Ablauf der Mindestvertragslaufzeit monatlich kündbar.
+                </p>
+                <div class="col-4 unstyled">
+                    <a href="/" target="_blank">
+                        <BenefitsCard icon='arcticons:calendar-3' headline='34,99€ / Monat'>
+                            Mindestvertragslaufzeit: <br />
+                            3 Monate
+                        </BenefitsCard>
+                    </a>
+                    <a href="/" target="_blank">
+                        <BenefitsCard icon='arcticons:calendar-6' headline='29,99€ / Monat'>
+                            Mindestvertragslaufzeit: <br />
+                            6 Monate
+                        </BenefitsCard>
+                    </a>
+                    <a href="/" target="_blank">
+                        <BenefitsCard icon='arcticons:calendar-12' headline='24,99€ / Monat'>
+                            Mindestvertragslaufzeit: <br />
+                            12 Monate
+                        </BenefitsCard>
+                    </a>
+                    <a href="/" target="_blank">
+                        <BenefitsCard icon='arcticons:calendar-24' headline='19,99€ / Monat'>
+                            Mindestvertragslaufzeit: <br />
+                            24 Monate
+                        </BenefitsCard>
+                    </a>
+                </div>
+            </div>
+            <div class="container section">
+                <h2>Unlimited Outdoor & Online</h2>
+                <p class="p-line">
+                    Nimm so oft du möchtest am Outdoor und Online BootCamp Training teil. Nach Ablauf der Mindestvertragslaufzeit monatlich kündbar. 
+                </p>
+                <p class="p-spacer p-smaller p-line">
+                    *Als Vertragsmitglied kannst du einmal monatlich einen Trainingspartner, der noch kein Mitglied bei uns ist, kostenlos zum Outdoor BootCamp Kurs mitbringen.
+                </p>
+                <div class="col-4 unstyled">
+                    <a href="/" target="_blank">
+                        <BenefitsCard icon='arcticons:calendar-3' headline='49,99€ / Monat'>
+                            Mindestvertragslaufzeit: <br />
+                            3 Monate
+                        </BenefitsCard>
+                    </a>
+                    <a href="/" target="_blank">
+                        <BenefitsCard icon='arcticons:calendar-6' headline='39,99€ / Monat'>
+                            Mindestvertragslaufzeit: <br />
+                            6 Monate
+                        </BenefitsCard>
+                    </a>
+                    <a href="/" target="_blank">
+                        <BenefitsCard icon='arcticons:calendar-12' headline='34,99€ / Monat'>
+                            Mindestvertragslaufzeit: <br />
+                            12 Monate
+                        </BenefitsCard>
+                    </a>
+                    <a href="/" target="_blank">
+                        <BenefitsCard icon='arcticons:calendar-24' headline='29,99€ / Monat'>
+                            Mindestvertragslaufzeit: <br />
+                            24 Monate
+                        </BenefitsCard>
+                    </a>
+                </div>
+            </div>
+            <div class="container section">
+                <h2>Unlimited Outdoor, Indoor & Online</h2>
+                <p class="p-line">
+                    Nimm so oft du möchtest am Outdoor, Indoor und Online BootCamp Training teil. 
+                    Nach Ablauf der Mindestvertragslaufzeit monatlich kündbar. 
+                </p>
+                <p class="p-spacer p-smaller p-line">
+                    *Als Vertragsmitglied kannst du einmal monatlich einen Trainingspartner, der noch kein Mitglied bei uns ist, kostenlos zum Outdoor BootCamp Kurs mitbringen.
+                </p>
+                <div class="col-4 unstyled">
+                    <a href="/" target="_blank">
+                        <BenefitsCard icon='arcticons:calendar-3' headline='69,99€ / Monat'>
+                            Mindestvertragslaufzeit: <br />
+                            3 Monate
+                        </BenefitsCard>
+                    </a>
+                    <a href="/" target="_blank">
+                        <BenefitsCard icon='arcticons:calendar-6' headline='64,99€ / Monat'>
+                            Mindestvertragslaufzeit: <br />
+                            6 Monate
+                        </BenefitsCard>
+                    </a>
+                    <a href="/" target="_blank">
+                        <BenefitsCard icon='arcticons:calendar-12' headline='54,99€ / Monat'>
+                            Mindestvertragslaufzeit: <br />
+                            12 Monate
+                        </BenefitsCard>
+                    </a>
+                    <a href="/" target="_blank">
+                        <BenefitsCard icon='arcticons:calendar-24' headline='49,99€ / Monat'>
+                            Mindestvertragslaufzeit: <br />
+                            24 Monate
+                        </BenefitsCard>
+                    </a>
+                </div>
+            </div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+    .p-spacer {
+        margin-bottom: 2em;
+    }
+    .p-smaller {
+        font-size: 0.9em;
+        font-weight: 300;
+    }
+    .p-line {
+        line-height: 1.8em;
+    }
+</style>
