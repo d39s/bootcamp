@@ -1,0 +1,113 @@
+---
+interface Props {
+}
+
+const {} = Astro.props;
+---
+
+
+
+<form method="post" id="contact-form">
+    <input name="vorname" placeholder="Vorname*">
+    <input name="nachname" placeholder="Nachname*">
+    <input name="email" placeholder="E-Mail*" type="email">
+    <input name="telefon" placeholder="E-Telefon/Mobil">
+    <select name="source" class="wide padding-right">
+        <option value="0" disabled selected hidden>Wie hast du von uns erfahren?</option>
+        <option value="SocialMedia">Social Media</option>
+        <option value="FreundeBekannte">Freunde / Bekannte</option>
+        <option value="Event">Event</option>
+        <option value="Suchmaschine">Suchmaschine</option>
+        <option value="Flyer">Werbung durch Flyer</option>
+        <option value="Sonstiges">Sonstiges</option>
+    </select>
+    <div class="wide" style="height: 0px"><!--spacer--></div>
+    <select name="subject" class="wide">
+        <option value="0" disabled selected hidden>Anfrage</option>
+        <option value="Probewoche">BootCamp-Probewoche</option>
+        <option value="IndoorYoga">Indoor / Yoga</option>
+        <option value="Firmentraining">Firmentraining</option>
+        <option value="Retreat">Retreat</option>
+        <option value="Sonstiges">Sonstiges</option>
+    </select>
+
+
+    <textarea name="text" placeholder="Ihre Nachricht*" class="wide"></textarea>
+    <span hidden class="wide success">Vielen Dank für Ihre Nachricht.</span>
+    <span hidden class="wide error">Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.</span>
+    <button type="submit" class="button-main wide">Nachricht senden</button>
+</form>
+
+<script>
+    window.addEventListener("load", () => {
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = Object.fromEntries(urlSearchParams.entries());
+        const status = params["form-mailer"];
+        if (!status) return;
+        const className = status === "success" ? "success" : "error";
+        document.querySelectorAll(`#contact-form > .${className}`).forEach(element => element.removeAttribute("hidden"));
+    })
+</script>
+
+
+<style>
+    form {
+        border-radius: 20px;
+
+         display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        color: var(--bootcamp-dark-orange);
+    }
+
+    h2 {
+        color: var(--gray);
+    }
+    .button-main {
+        justify-self: start;
+        width: auto;
+        margin: 0;
+    }
+
+    input, textarea, select {
+        padding: 14px;
+        border-radius: 28px;
+        border: 1px solid var(--bootcamp-dark-orange);
+        outline: none;
+        color: var(--bootcamp-dark-orange);
+        background: var(--bootcamp-background);
+        resize: none;
+        font-size: 0.8em;
+    }
+    .padding-right {
+        padding-right: 50px;
+    }
+    select {
+        -webkit-appearance: none;
+        appearance: none;
+        background: var(--bootcamp-background) url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E) no-repeat right 10px top 55%;
+    }
+
+
+    input::placeholder, textarea::placeholder{
+        color: var(--bootcamp-dark-orange);
+    }
+
+    .wide {
+        grid-column: 1 / -1;
+    }
+
+    textarea {
+        height: 200px;
+        font-family: Poppins, sans-serif;
+    }
+
+
+    .success {
+        color: green;
+    }
+
+    .error {
+        color: crimson;
+    }
+</style>

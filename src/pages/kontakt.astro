@@ -3,6 +3,12 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import CatchHeader from '../components/bootcamp/CatchHeader.astro';
+import ContactForm from '../components/bootcamp/ContactForm.astro';
+import Image from 'astro/components/Image.astro';
+import franzi from '../assets/kontakt/franzi.png';
+import map from '../assets/kontakt/map.svg';
+import gruppe from '../assets/kontakt/gruppe.jpg';
 ---
 
 <!doctype html>
@@ -12,33 +18,138 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<Header />
-        <div class="container">
-            <div class="left">
-                <!-- Calendly Link-Widget Beginn -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/fitflow-hikj/testereignis'});return false;">Zeitplan Zeitfenster</a>
-<!-- Calendly Link-Widget Ende -->
+		<main>
+            <CatchHeader topic="Kontakt">
+                Zögere nicht uns <span class="highlighter">zu kontaktieren</span>, falls Du Fragen hast!
+            </CatchHeader>
+            <div class="container section no-top-margin">
+                <div class="grid-60-40">
+                <div class="contact-card">
+                    <Image src={franzi} alt="Bild von BootCamp Besitzerin"></Image>
+                    <h2>Anfragen</h2>
+                    <p>
+                        Schreibe uns eine E-Mail über den Link oder nutze gern das Kontaktformular unten.
+                    </p>
+                    <a href="mailto:info@dasbootcamp.de">E-Mail schreiben</a>
+                </div>
+                <div class="contact-info">
+                    <Image src={map} alt="Landkartenicon"></Image>
+                    <h3>Das BootCamp</h3>
+                    <p>
+                        Das BootCamp GmbH <br />
+                        Friedrich-Ebert-Straße 82 <br />
+                        04109 Leipzig
+                    </p>
+                    <a href="https://goo.gl/maps/JFRP2RLG3hHsq1Kh6" target="_blank">Auf der Karte anzeigen</a>
+                </div>
             </div>
-            <div class="right">
-                Test
+            <div class="container section grid-60-40">
+                <div class="contact-form">
+                    <h2>Schreib uns</h2>
+                    <ContactForm />
+                </div>
+                <div class="media-round">
+                    <Image src={gruppe} alt="Sportler:innen im Park in Leipzig" />
+                </div>
             </div>
-        </div>
-
+        
+		</main>
 		<Footer />
 	</body>
 </html>
 
 
 <style>
-    .container {
+    .section.no-top-margin {
+        margin-top: 0;
+    }
+    .grid-60-40 {
         display: grid;
+        grid-template-columns: 0.6fr 0.4fr;
+        color: var(--bootcamp-light-orange);
+    }
+    .contact-form {
+        padding-right: 3.3em;
+        align-self: center;
+    }
+    .contact-form h2 {
+        margin-bottom: 0.6em;
+        font-size: 3em;
+        margin-top: 0;
+        padding: 0;
+    }
+    .contact-info {
+        align-self: center;
+        height: fit-content;
+        display: grid;
+        grid-template-areas: 
+            "image headline"
+            "image text"
+            "image email";
+        grid-template-columns: 0.35fr 0.65fr;
+        padding: 0;
+        padding-left: 3em;
+        column-gap: 1.4em;
+    }
+    .contact-info h3 {
+        font-family: "Poppins";
+        grid-area: headline;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 0;
+    }
+    .contact-info p {
+        margin: 1.4em 0;
+        grid-area: text;
+        font-size: 0.8em;
+        line-height: 1.8em;
+    }
+    .contact-info a {
 
-}
+        color: var(--bootcamp-dark-orange);
+        grid-area: email;
+        font-weight: 400;
+        font-size: 0.8em;
+    }
+    .contact-info img {
+        grid-area: image;
+        align-self: center;
+    }
 
+    .contact-card {
+        background-color: #42433d;
+        border-radius: 70px;
 
+        display: grid;
+        grid-template-areas: 
+            "image headline"
+            "image text"
+            "image email";
+        grid-template-columns: 0.4fr 0.6fr;
+        padding: 3em;
+        column-gap: 2em;
+    }
+    .contact-card a {
+        color: var(--bootcamp-dark-orange);
+        grid-area: email;
+        font-weight: 400;
+    }
+    .contact-card h2 {
+        grid-area: headline;
+        font-size: 3em;
+        margin: 0;
+    }
+    .contact-card p {
+        grid-area: text;
+        font-size: 1.2em;
+        line-height: 1.5em;
+    }
+    .contact-card img {
+        grid-area: image;
+        align-self: center;
+    }
+    body {
+        background-color: var(--bootcamp-background);
 
-    .left .right {
-        border: 1px solid black;
     }
 </style>

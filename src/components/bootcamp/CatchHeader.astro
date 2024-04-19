@@ -4,10 +4,9 @@ import {Image} from 'astro:assets';
 
 interface Props {
     topic: string;
-    headline: string;
 }
 
-const {topic, headline} = Astro.props;
+const {topic} = Astro.props;
 //const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
 
 ---
@@ -18,7 +17,7 @@ const {topic, headline} = Astro.props;
             {topic}
         </div>
         <div class="headline">
-            {headline}
+            <slot />
         </div>
     </div>
 </div>
@@ -43,7 +42,7 @@ const {topic, headline} = Astro.props;
     }
     .headline {
         color: var(--bootcamp-light-orange);
-        width: 50%;
+        width: 70%;
         margin: 0 auto;
         font-family: "CormorantGaramond";
         font-size: 4em;

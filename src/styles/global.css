@@ -4,6 +4,20 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+ html {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+  *,
+  *::before,
+  *::after {
+      -webkit-box-sizing: inherit;
+         -moz-box-sizing: inherit;
+              box-sizing: inherit;
+  }
+
 :root {
 	--accent-dark: #000d8a;
 	--black: 15, 18, 25;
@@ -25,7 +39,7 @@
 
   --bootcamp-background: #2e2f2a;
   --bootcamp-light-orange: #ffe5d4;
-  --bootcamp-dark-orange: #9c5f21;
+  --bootcamp-dark-orange: #ac6620;
   --bootcamp-text-color: #31361d;
   --bootcamo-background-light: #f5ede7;
 
@@ -50,7 +64,13 @@
   }
 }
 
-
+@font-face {
+	font-family: 'Poppins';
+	src: url('/fonts/Poppins-SemiBold.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
 
 @font-face {
 	font-family: 'Poppins';
@@ -114,6 +134,12 @@ background-color: var(--bootcamo-background-light);
 .highlighter {
   text-decoration: underline;
   text-decoration-color: var(--bootcamp-dark-orange);
+}
+
+.media-round {
+  border-radius: 70px;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 .section {
