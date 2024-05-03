@@ -63,11 +63,7 @@ import gruppe from '../assets/kontakt/gruppe.jpg';
     .section.no-top-margin {
         margin-top: 0;
     }
-    .grid-60-40 {
-        display: grid;
-        grid-template-columns: 0.6fr 0.4fr;
-        color: var(--bootcamp-light-orange);
-    }
+    
     .contact-form {
         padding-right: 3.3em;
         align-self: center;
@@ -115,7 +111,6 @@ import gruppe from '../assets/kontakt/gruppe.jpg';
         grid-area: image;
         align-self: center;
     }
-
     .contact-card {
         background-color: #42433d;
         border-radius: 70px;
@@ -150,6 +145,11 @@ import gruppe from '../assets/kontakt/gruppe.jpg';
     }
     body {
         background-color: var(--bootcamp-background);
+    }
 
+    @media(max-width: 740px){
+        .contact-card{
+            padding: 1em;
+        }
     }
 </style>
