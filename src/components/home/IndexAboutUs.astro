@@ -1,0 +1,90 @@
+---
+import type {ImageMetadata} from 'astro';
+import {Image} from 'astro:assets';
+---
+
+<div class="container grid-40-60">
+    <div>
+        <div class="topic">
+            Das sind wir
+        </div>
+        <div class="headline">
+            Ob Anfänger oder Fortgeschrittener – <span class="highlighter">wir haben für jeden das optimale Training</span>. 
+            Kräftige deine Muskeln, trainiere deine Ausdauer und verbessere deine Beweglichkeit – das alles in 60 Minuten!
+        </div>
+		<div class="scope">
+			<ul>
+				<li>Funktionelles Gruppentraining</li>
+				<li>Nutze dein eigenes Körpergewicht oder kleine Trainingstools (verschiedene Seile, Widerstandsbänder, Kettleballs, Kurzhanteln u.v.m.).</li>
+				<li>Trainiere in der Natur und nutze die Umgebung als deinen Trainingsplatz.</li>
+				<li>Erlebe eine unvergleichliche Gruppendynamik!</li>
+				<li>Erreiche deine Ziele unter dem Motto: "In der Ruhe liegt die Stärke, im Training der Fortschritt."</li>
+			</ul>
+		</div>
+		<div class="center">
+			<button class="button-main">STARTE JETZT DEINE KOSTENLOSE PROBEWOCHE!</button>
+		</div>
+		
+    </div>
+    <div class="image-wrapper">
+		<img width="1609" height="2560" src="https://dasbootcamp.de/wp-content/uploads/2023/09/6erPic-scaled.webp">
+	</div>
+</div>
+
+<style>
+	.topic {
+		margin-bottom: 1em;
+		color: var(--bootcamp-dark-orange);
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		font-size: 0.8em;
+		font-weight: 500;
+	}
+	.headline {
+		color: var(--bootcamp-text-color);
+		font-family: "CormorantGaramond";
+		font-size: 3em;
+		line-height: 1.1;
+		font-weight: 600;
+	}
+	.headline p{
+		margin: 0 0 20px;
+	}
+	.image-wrapper{
+		margin-right: -135px;
+		padding-left: 50px;
+	}
+	.scope{
+		padding-top: 20px;
+		color: #737E86;
+		font-weight: 300;
+		font-size: 0.9em;
+	}
+	.scope li{
+		line-height: 1.6;
+		padding-bottom: 15px;
+	}
+	.center{
+		text-align: center;
+	}
+	.button-main{
+		margin: 0 auto;
+	}
+	@media (max-width: 1000px) {
+		.headline{
+			font-size: 2em;
+		}
+		.scope{
+			padding-top: 10px;
+		}
+		
+	}
+
+	@media (max-width: 740px) {
+		.image-wrapper{
+			margin-right: 0;
+			padding-left: 0;
+			padding-top: 2em;
+		}
+	}
+</style>

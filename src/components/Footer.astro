@@ -9,9 +9,9 @@ import logo from "../assets/bc-logo.svg"
 		<a href="/">
 			<Image src={logo} alt="BootCamp Logo" height={200}/>
 		</a>
-		<div class="col-4">
+		<div class="footer-link col-4 col-xs-2">
 			<div>
-				<b>Spots</b>
+				<b>Unsere Spots</b>
 				<ul>
 					<li><a href='/''>Richard-Wagner-Hain</a></li>
 					<li><a href='/''>Redbull-Arena</a></li>
@@ -70,10 +70,12 @@ import logo from "../assets/bc-logo.svg"
 	ul {
 		list-style: none;
 		padding-left: 0;
-		line-height: 3em;
+		line-height: 1.5;
 		font-size: smaller;
 	}
 	ul a {
+		padding: 0.4em 0;
+		display: block;
 		text-decoration: none;
 		color: var(--bootcamp-light-orange);
 		font-weight: 300;
@@ -93,5 +95,16 @@ import logo from "../assets/bc-logo.svg"
 	}
 	.ul-right {
 		text-align: right;
+	}
+	@media (max-width: 1000px) {
+		.footer-link{
+			grid-auto-rows: max-content;
+			font-size: 0.9em;
+		}
+		.copyright{
+			margin-top: 1em;
+			font-size: 0.7em;
+			line-height: 1.5;
+		}
 	}
 </style>

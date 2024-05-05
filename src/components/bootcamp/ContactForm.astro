@@ -21,7 +21,7 @@ const {} = Astro.props;
         <option value="Flyer">Werbung durch Flyer</option>
         <option value="Sonstiges">Sonstiges</option>
     </select>
-    <div class="wide" style="height: 0px"><!--spacer--></div>
+    <div class="wide spacer" style="height: 0px"><!--spacer--></div>
     <select name="subject" class="wide">
         <option value="0" disabled selected hidden>Anfrage</option>
         <option value="Probewoche">BootCamp-Probewoche</option>
@@ -53,13 +53,11 @@ const {} = Astro.props;
 <style>
     form {
         border-radius: 20px;
-
-         display: grid;
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
         color: var(--bootcamp-dark-orange);
     }
-
     h2 {
         color: var(--gray);
     }
@@ -68,7 +66,6 @@ const {} = Astro.props;
         width: auto;
         margin: 0;
     }
-
     input, textarea, select {
         padding: 14px;
         border-radius: 28px;
@@ -87,27 +84,38 @@ const {} = Astro.props;
         appearance: none;
         background: var(--bootcamp-background) url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E) no-repeat right 10px top 55%;
     }
-
-
     input::placeholder, textarea::placeholder{
         color: var(--bootcamp-dark-orange);
     }
-
     .wide {
         grid-column: 1 / -1;
     }
-
     textarea {
         height: 200px;
         font-family: Poppins, sans-serif;
     }
-
-
     .success {
         color: green;
     }
-
     .error {
         color: crimson;
+    }
+    @media (max-width: 1000px) {
+        form {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        .spacer{
+            display: none;
+        }
+        .button-main{
+            width: 55%;
+            justify-self: center;
+        }
+    }
+    @media (max-width: 740px) {
+        .button-main{
+            width: 100%;
+        }
     }
 </style>

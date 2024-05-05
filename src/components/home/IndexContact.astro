@@ -1,0 +1,45 @@
+---
+import type {ImageMetadata} from 'astro';
+import {Image} from 'astro:assets';
+import CoachCard from '../../components/bootcamp/CoachCard.astro';
+---
+
+<div class="container">
+    <div class="wrapper">
+        <h2>Jetzt unverbindlich Kontakt mit uns aufnehmen!</h2>
+        <button class="button-main">Kontakt</button>
+    </div>
+
+</div>
+
+<style>
+    .container{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        min-height: 85vh;
+    }
+    h2{
+        font-size: 2em;
+    }
+    .wrapper{
+        padding: 2.5em 3.5em;
+        max-width: 650px;
+        background-color: var(--bootcamo-background-light);
+        border-radius: 50px;
+        text-align: center;
+    }
+    .button-main{
+        width: auto;
+    }
+    @media (max-width: 1000px) {
+        h2{
+            font-size: 1.5em;
+        }
+        .wrapper{
+            max-width: 450px;
+            margin-right: 35px;
+            padding: 1.5em 2.5em;
+        }
+    }
+</style>

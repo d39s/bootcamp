@@ -22,7 +22,6 @@ const {icon, headline} = Astro.props;
 <style>
     h3 {
         font-size: 1.0em;
-        min-height: 2.2em;
         font-family: 'Poppins';
     }
     .centered-icon {
@@ -36,5 +35,10 @@ const {icon, headline} = Astro.props;
         font-weight: 300;
         font-size: 0.9em;
         margin: 0;
+    }
+    @media (max-width: 740px) {
+        .component-text{
+            line-height: 1.5;
+        }
     }
 </style>
