@@ -1,0 +1,36 @@
+---
+import type {ImageMetadata} from 'astro';
+import {Image} from 'astro:assets';
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+    imagePath: string;
+    textPosition: string;
+}
+
+const {imagePath, textPosition} = Astro.props;
+const imageUrl = 'url("' + imagePath + '")' ;
+var orderImg = '1';
+var orderText = '2';
+if(textPosition == 'left'){
+    orderImg = '2';
+    orderText = '1';
+}
+---
+
+<div class="box-wrapper box-wrapper-margin">
+    <div class="box-text">
+        <slot />
+    </div>
+    <div class="box-bg" data-pos={textPosition}></div>
+</div>
+
+<style define:vars={{imageUrl, orderText, orderImg}}>
+    .box-text{
+        order: var(--orderText);
+    }
+    .box-bg{
+        background-image: var(--imageUrl);
+        order: var(--orderImg);
+    }
+</style>

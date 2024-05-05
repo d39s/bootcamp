@@ -8,10 +8,10 @@ import {Image} from 'astro:assets';
         <div class="topic">
             Herzlich Willkommen
         </div>
-        <div class="headline">
-            <p><span class="highlighter">Das BootCamp</span> ist eine Fitnesscommunity aus Leipzig, die sich auf Gruppenworkouts und Yoga spezialisiert hat.</p>
-            <p>Outdoor, Indoor oder doch lieber Online ? - Du hast die freie Wahl!</p>
-            <p>Bootcamp - Yoga - Functional Fitness - Barre - Meditation</p>
+        <div class="headline color-inverse">
+            <h2><span class="highlighter">Das BootCamp</span> ist eine Fitnesscommunity aus Leipzig, die sich auf Gruppenworkouts und Yoga spezialisiert hat.</h2>
+            <h3>Outdoor, Indoor oder doch lieber Online ? - Du hast die freie Wahl!</h3>
+            <h3>Bootcamp - Yoga - Functional Fitness - Barre - Meditation</h3>
         </div>
     </div>
 </div>
@@ -29,27 +29,29 @@ import {Image} from 'astro:assets';
 		margin-bottom: 1em;
 		font-weight: 500;
 	}
-	.headline {
-		color: var(--bootcamp-light-orange);
-		width: 85%;
+	.headline{
+		width: 90%;
 		margin: 0 auto;
-		font-family: "CormorantGaramond";
-		font-size: 3em;
-		line-height: 1.1;
-		font-weight: 600;
+		font-size: 1.1em;
 	}
-	.headline p{
-		margin: 0 0 20px;
+	.headline h3{
+		margin-bottom: 0.8em;
 	}
+	.headline h3{
+		font-size: 1.6em;
+	}
+
     @media (max-width: 1000px) {
 		.headline {
-			width: 90%;
-			font-size: 2.4em;
+			font-size: 1em;
+		}
+		.headline h3{
+			font-size: 1.4em;
 		}
 	}
 	@media (max-width: 740px) {
 		.headline {
-			font-size: 1.7em;
+			font-size: 0.8em;
 			width: 100%;
 		}
 	}
