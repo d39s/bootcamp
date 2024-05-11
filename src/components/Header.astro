@@ -7,7 +7,7 @@ import logo from "../assets/bc-logo.svg"
 
 <header>
 	<nav class="container">
-		<a class="logo"" href="/">
+		<a class="logo" href="/">
 			<Image src={logo} alt="BootCamp Logo" />
 		</a>
 		<div class="internal-links menu-list">
@@ -104,11 +104,20 @@ import logo from "../assets/bc-logo.svg"
 <script>
 	const menu = document.querySelector(".menu-list");
 	const menuItems = document.querySelectorAll(".menu-item");
-	const hamburger= document.querySelector(".burger-menu");
-	const closeIcon= document.querySelector(".icon-close");
-	const menuIcon = document.querySelector(".icon-burger");
+	const hamburger = document.querySelector<HTMLButtonElement>(".burger-menu");
+	const closeIcon= document.querySelector<HTMLDivElement>(".icon-close");
+	const menuIcon = document.querySelector<HTMLDivElement>(".icon-burger");
+	if(
+		hamburger === null
+		|| !(hamburger instanceof HTMLButtonElement)
+		|| closeIcon === null
+		|| !(closeIcon instanceof HTMLDivElement)
+		|| menuIcon === null
+		|| !(menuIcon instanceof HTMLDivElement)
+	) throw Error("error initializing menu");
 
 	function toggleMenu() {
+		if(menu === null || closeIcon === null || menuIcon === null) throw Error("error toggling menu");
 		if (menu.classList.contains("show-menu")) {
 			menu.classList.remove("show-menu");
 			closeIcon.style.display = "none";
