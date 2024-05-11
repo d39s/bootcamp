@@ -1,0 +1,243 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import CatchHeader from '../components/bootcamp/CatchHeader.astro';
+import CoachCard from '../components/bootcamp/CoachCard.astro';
+import CourseCard from '../components/bootcamp/CourseCard.astro';
+import ContentCard from '../components/bootcamp/ContentCard.astro';
+import Booking from '../components/bootcamp/Booking.astro';
+import { Icon } from 'astro-icon/components';
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+            <CatchHeader topic="YOGA BY DAS BOOTCAMP">
+                Yoga - Indoor Angebot für dich in Leipzig
+            </CatchHeader>
+
+            <!-- Intro -->
+            <div class="section section-offset">
+                <div class="container">
+                    <ContentCard imagePath='https://dasbootcamp.de/wp-content/uploads/2023/10/IMG_8717.jpg#357' textPosition='left'>
+                        <h2>Entdecke deinen Yoga Stil</h2>
+                        <p class="sub-headline">Aufbau der Klassen:</p>
+                        <p>
+                            Yoga ist die Kunst, Körper und Geist in Harmonie zu bringen. 
+                            Es verbindet Bewegung, Atmung und Meditation zu einer ganzheitlichen Erfahrung, die Flexibilität, Entspannung und innere Ausgeglichenheit fördert.
+                        </p>
+                        <p>
+                            <strong>Vinyasa:</strong> Vinyasa Yoga ist eine dynamische Yoga-Praxis, die Bewegung und Atmung synchronisiert. 
+                            Durch eine fließende Abfolge von Asanas werden Stärke, Flexibilität und eine harmonische Verbindung von Körper und Geist gefördert.
+                        </p>
+                        <p>
+                            <strong>FitFlow:</strong> FitFlow ist die perfekte Mischung aus Yoga und Fitness. 
+                            In dieser dynamischen Praxis werden kraftvolle Asanas mit stärkenden Fitness-Elementen kombiniert.
+                        </p>
+                        <p>
+                            <strong>SlowFlow:</strong> Eine sanfte und meditative Yoga-Praxis, bei der die Bewegungen bewusst und fließend ausgeführt werden.
+                        </p>
+                        <p>
+                            <strong>Yin:</strong> Yin Yoga ist ein ideales Training für die Faszien, bei dem durch das lange Halten der Positionen die Faszien gedehnt und Verklebungen und Verspannungen gelöst werden.
+                        </p>
+                        <a href="" class="button-container">
+                            <button class="button-main">Zur Anmeldung</button>
+                        </a>
+                    </ContentCard>
+                </div>
+            </div>
+
+            <!-- Team -->
+            <div class="section">
+                <div class="container">
+                    <div class="topic">
+                        TEAMVORSTELLUNG
+                    </div>
+                    <h2 class="headline">
+                        Dein <span class="highlighter">Yogateam</span>
+                    </h2>
+                    <div class="grid-3">
+                        <CoachCard name='Steffi' descr='Yin-Yoga, Thai-Masseurin' img_path='/steffi' />
+                        <CoachCard name='Carolina' descr='Yoga, Meditation, Movement' img_path='/carolina' />
+                        <CoachCard name='Yasmin' descr='Vinyasa Flow' img_path='/yasmin' />
+                        <CoachCard name='Sascha' descr='Breath & Meditate, Hatha Yoga' img_path='/sascha' />
+                        <CoachCard name='Sofia' descr='Sunrise Flow, After Work Flow, Breath & Meditate' img_path='/sofia' />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aktuelle Kurse -->
+            <div class="section">
+                <div class="container">
+                    <div class="topic">
+                        indoor
+                    </div>
+                    <h2 class="headline">
+                        Aktuelle Kurse
+                    </h2>
+                    <div class="courses">
+                        <CourseCard 
+                            name='After-Work-Flow' 
+                            time='Dienstag, 15.00 - 16.00 Uhr' 
+                            descr='Der Kurs findet im Duayoga statt.' 
+                            location='Nikolaistr. 33-37, 04109 Leipzig' 
+                            href='/' 
+                            img_path='https://dasbootcamp.de/wp-content/uploads/2024/01/51c64d65-fbbb-4e94-8043-be0de99d2e69.png' 
+                        />
+                        <CourseCard 
+                            name='Vinyasa-Flow-Yoga' 
+                            time='Dienstag, 17.30 - 18.30 Uhr' 
+                            descr='Der Kurs findet im Duayoga statt.' 
+                            location='Nikolaistr. 33-37, 04109 Leipzig' 
+                            href='/' 
+                            img_path='https://dasbootcamp.de/wp-content/uploads/2023/10/23-05-20-16-36-45-6858.jpg' 
+                        />
+                        <CourseCard 
+                            name='Hatha-Yoga' 
+                            time='Freitag, 17.00 - 18.00 Uhr' 
+                            descr='Der Kurs findet im Physiolounge statt.' 
+                            location='Zentralstraße 1, 04109 Leipzig' 
+                            href='/' 
+                            img_path='https://dasbootcamp.de/wp-content/uploads/2024/01/c37c1bb8-93cf-445a-9aec-8854993f7684.png' 
+                        />
+                        <CourseCard 
+                            name='Barre-Workout' 
+                            time='Sonntag, 15.00 - 16.00 Uhr' 
+                            descr='Der Kurs findet im Physiolounge statt.' 
+                            location='Nikolaistr. 33-37, 04109 Leipzig' 
+                            href='/' 
+                            img_path='https://dasbootcamp.de/wp-content/uploads/2024/01/1b1524ae-e313-4f82-85a1-5824bd4200fb.jpg' 
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Outro -->
+            <div class="section">
+                <div class="container">
+                    <!-- Kurs -->
+                    <ContentCard imagePath='https://dasbootcamp.de/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-15-at-21.30.56.jpeg#359' textPosition='left'>
+                        <h2>Was ist Yin-Yoga?</h2>
+                        <p>
+                            Yin Yoga ist ein ideales Training für die Faszien, bei dem durch das lange Halten der Positionen die Faszien gedehnt und Verklebungen und Verspannungen gelöst werden. 
+                            Asanas werden mit Hilfe von Props wie Bolstern, Blöcken und Decken länger gehalten und helfen dir damit beim Loslassen, Regenerieren und Entspannen. 
+                            Yin Yoga ist nicht nur eine Art des Faszientrainings, es kann noch viel mehr: Yin Yoga wirkt ganzheitlich auf Körper, Geist und Seele. 
+                            Yin Yoga gibt uns die Möglichkeit, mit viel Achtsamkeit und Selbstmitgefühl, die eigenen Grenzen zu erforschen. 
+                            Es geht hierbei nicht um Leistung, wie wir es oft in der Welt erleben, wir lassen sämtlichen Leistungsdruck draußen und sind einfach wie wir sind, weder gut noch schlecht – wir sind einfach.
+                        </p>
+                        <p class="sub-headline">Kursbeschreibung</p>
+                        <p>
+                            Während der Stunde unterstütze ich euch mit Elementen der Thai-Yoga-Massage noch tiefer in die Entspannung zu kommen.
+                        </p>
+                        <p>
+                            Jede Stunde wird durch ein Thema begleitet, physisch oder auch emotional (z.B. Fokus Rücken, Hüfte oder Brustraum sowie Reflexion zu bestimmten Themen).
+                        </p>
+                        <p>
+                            Es ist mir ein Bedürfnis dich auf deiner Reise zu deinem Körper und deinem Selbst zu begleiten und dir mit Hilfe von Mentaltraining neue Impulse für deine eigene Entwicklung mitzugeben. 
+                        </p>
+                    </ContentCard>
+
+                    <!-- Kurs -->
+                    <ContentCard imagePath='https://dasbootcamp.de/wp-content/uploads/2023/10/23-05-20-15-39-01-6847.jpg#365' textPosition='left'>
+                        <h2>Was ist Hatha Yoga?</h2>
+                        <p>
+                            Hatha Yoga ist eine der bekanntesten Formen des Yoga und hat seine Wurzeln in Indien. 
+                            Der Begriff "Hatha" setzt sich aus den Wörtern "Ha" (Sonne) und "Tha" (Mond) zusammen, was auf die Vereinigung und Harmonie von Gegensätzen hinweist. 
+                            Hatha Yoga konzentriert sich auf die physische Praxis, die Atmung und die Meditation, um Körper und Geist in Einklang zu bringen.
+                        </p>
+                        <p class="sub-headline">Kursbeschreibung</p>
+                        <p>
+                            In einer Hatha Yoga-Stunde werden verschiedene Asanas (Yogapositionen) eingenommen, um die Flexibilität, Stärke und Ausdauer des Körpers zu verbessern. 
+                            Die korrekte Ausführung der Asanas erfordert Konzentration und Achtsamkeit, was dazu beiträgt, den Geist zu beruhigen und Stress abzubauen.
+                        </p>
+                        <p>
+                            Die Atemkontrolle, auch Pranayama genannt, spielt eine wichtige Rolle im Hatha Yoga. 
+                            Durch bewusstes Atmen werden die Energiezentren im Körper aktiviert, was zu einer Steigerung des Wohlbefindens und der Vitalität führen kann.
+                        </p>
+                        <p>
+                            Hatha Yoga ist für Menschen jeden Alters und Fitnesslevels geeignet. Es bietet eine ganzheitliche Methode, um Körper und Geist zu stärken, Stress abzubauen und die innere Ruhe zu fördern. 
+                            Ob als sanfte Einführung in die Welt des Yoga oder als fortgeschrittene Praxis, Hatha Yoga kann einen positiven Einfluss auf die körperliche und geistige Gesundheit haben und dabei helfen, das Gleichgewicht im Leben zu finden.
+                        </p>
+                    </ContentCard>
+
+                </div>
+            </div>
+
+            <!-- Spots -->
+            <div class="section">
+                <div class="container">
+                    <div class="topic">
+                        Indoor
+                    </div>
+                    <h2 class="headline">
+                        Unsere Spots in Leipzig
+                    </h2>
+                    <ContentCard imagePath='https://dasbootcamp.de/wp-content/uploads/2023/10/physiolounge_physiotherapie-leipzig_bilder-inneneinrichtung_7.jpg#382' textPosition='right'>
+                        <h3>Physiolounge</h3>
+                        <p>
+                            Zentral in Leipzig Mitte gelegen, erreichst du die Physiolounge unkompliziert mit Bahn und Bus oder in einigen Minuten zu Fuß aus der Leipziger Innenstadt. 
+                            Unmittelbar neben dem Studio befindet sich das Parkhaus Zentralstraße, welches preiswerte Parktickets anbietet. 
+                            Die Bahnlinien 2, 8 und 9 sowie die Buslinien 89 befinden sich in unmittelbarer Nähe. 
+                            Bitte klingle bei “Physiolounge”. 
+                            Der Fitnessraum befindet sich im Erdgeschoss hinter der ersten Tür auf der rechten Seite, bevor es die Treppen hinaufgeht. 
+                            Es gibt zwar eine kleine Umkleidekabine, um aber lange Wartezeiten zu vermeiden, ist es am besten, du kommst direkt in Sportklamotten.
+                        </p>
+                        <a href="" class="button-container">
+                            <button class="button-ghost btn-with-icon transition"><Icon class="btn-icon" name="mdi:map-marker" /> Google Maps</button>
+                        </a>
+                    </ContentCard>
+
+                    <ContentCard imagePath='https://dasbootcamp.de/wp-content/uploads/2024/01/57dfb285-3a17-4d9b-8d94-054de36e5ca5.jpg#445' textPosition='left'>
+                        <h3>Duayoga</h3>
+                        <p>
+                            Der Zugang befindet sich auf der Nikolaistraße 33-37. 
+                            Da das Studio im Zentrum liegt, könnt ihr bequem am Goerdelerring aussteigen und 5min zu Fuß zum Studio gehen. 
+                            Vom Markt aus befindet sich die Seitenstraße nur 2 min entfernt. 
+                            Ihr klingelt bei "Duayoga" und könnt entweder den Fahrstuhl oder die Treppen nutzen. 
+                            Im Studio angekommen, könnt ihr die Umkleidekabinen nutzen.
+                        </p>
+                        <a href="" class="button-container">
+                            <button class="button-ghost btn-with-icon transition"><Icon class="btn-icon" name="mdi:map-marker" /> Google Maps</button>
+                        </a>
+                    </ContentCard>
+                </div>
+            </div>
+
+            <!-- Buchung -->
+            <div class="section">
+                <Booking />
+            </div>
+
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+    
+    .grid-3{
+        gap: 35px;
+    }
+    .courses{
+        gap: 35px;
+        display: grid;
+    }
+    @media (max-width: 1200px) {
+        .button-container .button-main{
+            width: 100%;
+        }
+    }
+    @media (max-width: 740px) {
+        .courses{
+            justify-content: center;
+        }
+    }
+</style>

@@ -29,22 +29,35 @@ const {topic} = Astro.props;
         padding-bottom: 6em;
         padding-top: 4em;
     }
-    .container {
-
-    }
     .topic {
+        margin-bottom: 1em;
         color: var(--bootcamp-dark-orange);
         text-transform: uppercase;
         letter-spacing: 5px;
         font-size: 0.8em;
-        margin-bottom: 1em;
-        
     }
     .headline {
         color: var(--bootcamp-light-orange);
-        width: 70%;
+        width: 80%;
         margin: 0 auto;
         font-family: "CormorantGaramond";
         font-size: 4em;
+        line-height: 1;
+    }
+    @media (max-width: 1000px) {
+        .catch-header{
+            padding-bottom: 2em;
+            padding-top: 1.5em;
+        }
+        .headline {
+            width: 90%;
+            font-size: 3em;
+        }
+    }
+    @media (max-width: 740px) {
+        .headline {
+            font-size: 1.7em;
+            width: 100%;
+        }
     }
 </style>

@@ -1,0 +1,60 @@
+---
+import type {ImageMetadata} from 'astro';
+import {Image} from 'astro:assets';
+import CoachCard from '../../components/bootcamp/CoachCard.astro';
+---
+
+<div class="container">
+    <div class="topic">
+        Trainervorstellung
+    </div>
+    <h2 class="headline">
+        Deine <span class="highlighter">Coaches</span>
+    </h2>
+    <div class="grid-3">
+        <CoachCard name='Franzi' descr='Head of Sweat' img_path='/franzi' />
+        <CoachCard name='Eric' descr='Strength & Conditioning' img_path='/eric' />
+        <CoachCard name='Christoph' descr='Neuroathletic' img_path='/christoph' />
+        <CoachCard name='Karo' descr='Fitness & Motivation' img_path='/karo' />
+        <CoachCard name='Matze' descr='Animal Movement' img_path='/matze' />
+        <CoachCard name='Robin' descr='Calisthenics' img_path='/robin' />
+        <CoachCard name='Jules' descr='Fitness & Dancing' img_path='/jules' />
+        <CoachCard name='Micha' descr='Conditioning' img_path='/micha' />
+    </div>
+</div>
+
+<style>
+    .grid-3{
+        gap: 35px;
+        padding-bottom: 2.5em;
+    }
+	.topic {
+		margin-bottom: 1em;
+		color: var(--bootcamp-dark-orange);
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		font-size: 0.8em;
+		font-weight: 500;
+        text-align: center;
+	}
+	.headline {
+        margin-bottom: 0.6em;
+		color: var(--bootcamp-text-color);
+		font-family: "CormorantGaramond";
+		font-size: 3em;
+		line-height: 1.1;
+		font-weight: 600;
+        text-align: center;
+	}
+
+    @media (max-width: 740px) {
+        .grid-3{
+            gap: 30px;
+            grid-template-columns: 1fr;
+        }
+        .headline{
+            font-size: 2em;
+        }
+    }
+	
+</style>

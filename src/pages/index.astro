@@ -2,6 +2,16 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { Icon } from 'astro-icon/components'
+
+import IndexTeaser from '../components/home/IndexTeaser.astro';
+import IndexWelcome from '../components/home/IndexWelcome.astro';
+import IndexSocial from '../components/home/IndexSocial.astro';
+import IndexStats from '../components/home/IndexStats.astro';
+import IndexAboutUs from '../components/home/IndexAboutUs.astro';
+import IndexNewsletter from '../components/home/IndexNewsletter.astro';
+import IndexCoaches from '../components/home/IndexCoaches.astro';
+import IndexContact from '../components/home/IndexContact.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
@@ -13,43 +23,94 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Michael!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-			<p>
-				Wenn dieser Satz automatisch auf der Seite erscheint, hat das Update geklappt :D
-				Und noch ein Versuch xd
-				Warum geht das nicht? :(
-			</p>
+			<!-- Teaser -->
+			<div class="section">
+				<IndexTeaser />
+			</div>
+
+			<!-- Welcome -->
+			<div class="section">
+				<IndexWelcome />
+			</div>
+
+			<!-- Socials -->
+			<div class="section">
+				<IndexSocial />
+			</div>
+
+			<!-- Stats -->
+			<div class="section">
+				<IndexStats />
+			</div>
+
+			<!-- Video -->
+			<div class="section bg-gradient">
+				<div class="container">
+					<div class="media-round v_placeholder"></div>
+				</div>
+			</div>
+			
+			<!-- About Us -->
+			<div class="section bg-light">
+				<IndexAboutUs />
+			</div>
+
+			<!-- Newsletter -->
+			<div class="section bg-light">
+				<IndexNewsletter />
+			</div>
+
+			<!-- Coaches -->
+			<div class="section bg-light">
+				<IndexCoaches />
+			</div>
+
+			<!-- Kontakt -->
+			<div class="section bg-light bg-contact">
+				<IndexContact />
+			</div>
+
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	body{
+		background-color: var(--bootcamp-background);
+	}
+	.section.bg-gradient{
+		background: linear-gradient(0deg, var(--bootcamp-background-light) 50%, var(--bootcamp-background) 50%, var(--bootcamp-background) 100%);
+		margin-bottom: 0;
+		padding-bottom: 2.5em;
+	}
+	.section.bg-light{
+		margin: 0;
+		padding: 2.5em 0;
+		background-color: var(--bootcamp-background-light);
+	}
+	
+	.v_placeholder{
+		height: 800px;
+		width: 800px;
+		margin: 0 auto;
+		background-color: #fff;
+	}
+@media(max-width: 1000px){
+	.v_placeholder{
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1/1;
+	}
+}
+
+	@media (max-width: 1000px) {
+		.section.bg-gradient{
+			padding-bottom: 1.2em;
+		}
+		.section.bg-light{
+			padding: 1.2em 0;
+		}
+	}
+	
+</style>

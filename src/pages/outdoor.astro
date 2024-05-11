@@ -1,0 +1,177 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import CatchHeader from '../components/bootcamp/CatchHeader.astro';
+import ContentCard from '../components/bootcamp/ContentCard.astro';
+import { Icon } from 'astro-icon/components';
+import IndexContact from '../components/home/IndexContact.astro';
+import Booking from '../components/bootcamp/Booking.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<CatchHeader topic="Bootcamp">
+				Unser <span class="highlighter">Outdoor-Fitnessprogramm</span> für dich in Leipzig
+			</CatchHeader>
+
+            <!-- Intro -->
+            <div class="section section-offset">
+                <div class="container">
+                    <ContentCard imagePath='https://dasbootcamp.de/wp-content/uploads/2023/09/BC_BuddyDay_040-1-scaled.jpg#216' textPosition='left'>
+                        <h2>Outdoorfitness in Leipzig</h2>
+                        <p class="sub-headline">Aufbau der Trainingseinheiten:</p>
+                        <p>
+                            Unsere Trainings bestehen aus einem Warm-Up, einem Hauptteil und der Abschlusschallenge.
+                        </p>
+                        <p>
+                            Um eine starke Community aufzubauen, binden wir in unsere Trainings viele Partner-Workouts ein.
+                        </p>
+                        <p>
+                            Unser Ziel ist es, die persönlichen Grenzen jedes Einzelnen herauszufinden. 
+                            Die Dynamik der Gruppe sowie die Motivation unserer Coaches bieten dafür die entsprechenden Voraussetzungen.
+                        </p>
+                        <p>
+                            Möchtest du Teil der BootCamp-Community werden? Dann melde dich noch heute zur kostenlosen Probewoche an.
+                        </p>
+                        <a href="" class="button-container">
+                            <button class="button-main">Zur Probewoche</button>
+                        </a>
+                    </ContentCard>
+                </div>
+            </div>
+
+            <!-- Spots -->
+            <div class="section">
+                <div class="container">
+                    <div class="topic">
+                        Outdoor
+                    </div>
+                    <h2 class="headline">
+                        Unsere Spots in Leipzig
+                    </h2>
+                    <ContentCard imagePath='https://future.dasbootcamp.de/wp-content/uploads/2023/09/richard-wagner-hain-1.png#279' textPosition='right'>
+                        <h3>Richard-Wagner-Hain</h3>
+                        <p>
+                            Mit seinen zahlreichen Treppen und unterschiedlichen Untergründen direkt an der Elster gelegen, bietet dieser Ort eine perfekte Kulisse für ein vielseitiges Training.
+                        </p>
+                        <p class="sub-headline">
+                            Wegbeschreibung:
+                        </p>
+                        <p>
+                            Um den Richard-Wagner-Hain zu erreichen, folge einfach diesen Schritten:
+                            Laufe an der Litfaßsäule, die sich auf der Straßenseite der Sportfakultät und sich am Anfang der Angerbrücke befindet, an den Treppen hinunter.
+                        </p>
+                        <p>
+                            Biege nach dem Abstieg nach links ab und laufe in Richtung der Sachsenbrücke.
+                            Nach etwa 100 Metern befindet sich der Treffpunkt am Plateau, gegenüber der Elster.
+                        </p>
+                        <a href="" class="button-container">
+                            <button class="button-ghost btn-with-icon transition"><Icon class="btn-icon" name="mdi:map-marker" /> Google Maps</button>
+                        </a>
+                    </ContentCard>
+
+                    <ContentCard imagePath='https://future.dasbootcamp.de/wp-content/uploads/2023/09/clara-park.png#277' textPosition='left'>
+                        <h3>Clara-Zetkin-Park</h3>
+                        <p>
+                            Willkommen im Clara-Zetkin-Park, dem grünen Herzen von Leipzig! 
+                            Direkt an der Elster und in der Nähe der Pferderennbahn gelegen, bietet dieser Trainingsort eine einzigartige Verbindung von Natur und Sport.
+                        </p>
+                        <p class="sub-headline">
+                            Wegbeschreibung:
+                        </p>
+                        <p>
+                            Um zum Trainingsort im Clara-Zetkin-Park zu gelangen, folge diesen einfachen Schritten:
+                            Gegenüber vom Eingang zum Biergarten der Pferderennbahn befindet sich ein Weg in Richtung eines kleinen Spielplatzes auf der linken Seite. 
+                            Gehe diesen Parkweg etwa 200m entlang. Nach dem Spielplatz befindet sich ein Beton-Rondell mit Bänken. Dort befindet sich der Trainingsspot.
+                        </p>
+                        <a href="" class="button-container">
+                            <button class="button-ghost btn-with-icon transition"><Icon class="btn-icon" name="mdi:map-marker" /> Google Maps</button>
+                        </a>
+                    </ContentCard>
+
+                    <ContentCard imagePath='https://future.dasbootcamp.de/wp-content/uploads/2023/09/red-bull-arena.png#278' textPosition='right'>
+                        <h3>RedBull Arena</h3>
+                        <p>
+                            Die Lage dieses Trainingsplatzes ist wahrlich unschlagbar! Du findest uns direkt neben der atemberaubenden Red Bull Arena. 
+                            Von unserem Trainingsplatz aus kannst du das Stadion sehen, was für zusätzliche Motivation sorgt. 
+                            Die Nähe zum Stadion verleiht deinem Training eine besondere Energie und einen Hauch von Profisport.
+                        </p>
+                        <p class="sub-headline">
+                            Wegbeschreibung:
+                        </p>
+                        <p>
+                            Um zu unserem Treffpunkt am Stadionvorplatz zu gelangen, folge bitte diesen einfachen Schritten:
+                            Du befindest dich auf dem großen Parkplatz in der Nähe des RB Fanshops, der als P1 gekennzeichnet ist. 
+                            Suche nach den Treppen, die vom Parkplatz aus nach oben führen. 
+                            Gehe die Treppen hoch, die dich von P1 weg und in Richtung der Ostseite des Stadions führen. 
+                            Diese Treppen sind ein erster Vorgeschmack auf das oft genutzte Treppentraining.
+                        </p>
+                        <p>
+                            Oben angekommen, wirst du den Eingang zur Ostseite des Stadions erreichen. 
+                            Dies ist der Ort, an dem du dich mit deinem Trainingsteam treffen wirst. 
+                            Manchmal befindet sich die Trainingsgruppe links um die Ecke, falls du frontal zu den Treppen niemanden sehen solltest.
+                        </p>
+                        <a href="" class="button-container">
+                            <button class="button-ghost btn-with-icon transition"><Icon class="btn-icon" name="mdi:map-marker" /> Google Maps</button>
+                        </a>
+                    </ContentCard>
+
+                    <ContentCard imagePath='https://future.dasbootcamp.de/wp-content/uploads/2023/09/palmengarten-1.png#275' textPosition='left'>
+                        <h3>Palmengarten</h3>
+                        <p>
+                            Diese idyllische Umgebung bietet eine faszinierende Kombination aus Natur und Fitness. 
+                            Die zahlreichen trockengelegten Pools sorgen für ein anspruchsvolles Trainingserlebnis und schaffen eine inspirierende Atmosphäre. 
+                            Der Palmengarten ist der perfekte Ort, um deine Grenzen zu testen und gleichzeitig die Schönheit der Natur zu genießen.
+                        </p>
+                        <p class="sub-headline">
+                            Wegbeschreibung:
+                        </p>
+                        <p>
+                            Um zum Treffpunkt im Palmengarten zu gelangen, folge diesen einfachen Schritten:
+                            Wenn du von der Sportfakultät in Richtung Lindenau fährst, überquerst du die Angerbrücke. 
+                            Biege nach links in den ersten Parkweg ein, der sich direkt am Ende der Brücke befindet.
+                        </p>
+                        <p>
+                            Folge diesem Parkweg etwa 100 Meter. Du wirst auf der linken Seite des Weges Treppen sehen, die zum Trainingsort führen. 
+                            Laufe diese Treppen hinab und auf der linken Seite wirst du eine Freifläche mit Bänken sehen. 
+                            Dort ist der Treffpunkt.
+                        </p>
+                        <a href="" class="button-container">
+                            <button class="button-ghost btn-with-icon transition"><Icon class="btn-icon" name="mdi:map-marker" /> Google Maps</button>
+                        </a>
+                    </ContentCard>
+                </div>
+            </div>
+
+            <!-- Buchung -->
+            <div class="section">
+                <Booking />
+            </div>
+
+            <!-- Kontakt -->
+			<div class="section bg-light bg-contact">
+				<IndexContact />
+			</div>
+
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+    @media (max-width: 1000px) {
+    .button-ghost{
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+</style>

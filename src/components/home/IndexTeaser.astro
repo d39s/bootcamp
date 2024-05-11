@@ -1,0 +1,102 @@
+---
+import type {ImageMetadata} from 'astro';
+import {Image} from 'astro:assets';
+---
+
+<div class="container">
+    <div class="teaser">
+        <h1><span>Das</span> Bootcamp</h1>
+        <div class="teaser-secondary">
+            <img class="teaser-gif" src="https://future.dasbootcamp.de/wp-content/uploads/2023/09/kreis-schrift-bootcamp_1_1_newFontFix2-1.svg" alt="Bootcamp | Community, Nature, Outdoor, Training" width="200" height="200">
+            <div class="button-list">
+                <a href="/">
+                    <button class="button">Yoga-Kurse</button>
+                </a>
+                <a href="/">
+                    <button class="button">Bootcamp Kurse</button>
+                </a>
+                <a href="/">
+                    <button class="button">Fitflow Retreat</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+
+    .teaser{
+        position: relative;
+        display: grid;
+        grid-template-columns: auto 1fr;
+    }
+    h1{
+        width: 700px;
+        margin: 0;
+        font-size: 8em;
+        line-height: 1em;
+        color: var(--bootcamp-light-orange);
+    }
+    h1>span{
+        margin-left: 1em;
+    }
+    .teaser-secondary{
+        justify-self: center;
+    }
+    .teaser-gif{
+        position: absolute;
+        right: 0px;
+        top: -65px;
+        z-index: 1;
+    }
+    .button-list{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        width: 270px;
+        margin-top: 240px;
+    }
+    .button{
+        width: 100%;
+        padding: 12px 16px;
+        color: var(--bootcamp-dark-orange);
+        font-weight: 400;
+        background-color: var(--bootcamp-light-orange);
+        border: 2px solid var(--bootcamp-light-orange);
+        border-radius: 15px;
+        outline: 0;
+    }
+    .button:hover{
+        border: 2px solid var(--bootcamp-dark-orange);
+        cursor: pointer;
+    }
+    @media (max-width: 1000px){
+        .teaser{
+            grid-template-columns: 1fr;
+        }
+        h1{
+            width: 350px;
+            font-size: 3em;
+        }
+        .teaser-gif{
+           height: 130px;
+           width: 130px;
+            top: -30px;
+        }
+        .button-list{
+            margin-top: 45px;
+        }
+    }
+    @media (max-width: 740px) {
+        h1{
+            width: 100%;
+            font-size: 3em;
+        }
+        .teaser-gif{
+           height: 80px;
+           width: 80px;
+            top: -30px;
+        }
+    }
+</style>

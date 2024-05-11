@@ -1,0 +1,59 @@
+---
+import type {ImageMetadata} from 'astro';
+import {Image} from 'astro:assets';
+import StatsCard from '../../components/bootcamp/StatsCard.astro';
+---
+
+<div class="container col-4 col-md-2">
+    <StatsCard number={9} descr='Spots'></StatsCard>
+    <StatsCard number={22} descr='Kurse'></StatsCard>
+    <StatsCard number={16} descr='Coaches'></StatsCard>
+    <StatsCard number={3} descr='Retreat'></StatsCard>
+</div>
+
+<style>
+
+</style>
+
+<script>
+    const initAnimatedCounts = () => {
+    const ease = (n: number) => {
+        return --n * n * n + 1;
+    };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            // Once this element is in view and starts animating, remove the observer,
+            // because it should only animate once per page load.
+            observer.unobserve(entry.target);
+            const countToString = entry.target.getAttribute('data-countTo');
+            if(countToString === null) return;
+            const countDurationString = entry.target.getAttribute('data-animateDuration');
+            if(countDurationString === null) return;
+            const countTo = parseFloat(countToString);
+            const duration = parseFloat(countDurationString);
+            const countToParts = countToString.split('.');
+            const precision = countToParts.length === 2 ? countToParts[1].length : 0;
+            const startTime = performance.now();
+            const step = (currentTime: number) => {
+            const progress = Math.min(ease((currentTime  - startTime) / duration), 1);
+            entry.target.textContent = (progress * countTo).toFixed(precision);
+            if (progress < 1) {
+                animationFrame = window.requestAnimationFrame(step);
+            } else {
+                window.cancelAnimationFrame(animationFrame);
+            }
+            };
+            let animationFrame = window.requestAnimationFrame(step);
+        }
+        });
+    });
+    document.querySelectorAll('[data-animateDuration]').forEach((target) => {
+        target.setAttribute('data-countTo', target.textContent ?? "0");
+        target.textContent = '0';
+        observer.observe(target);
+    });
+    };
+    initAnimatedCounts();
+
+</script>

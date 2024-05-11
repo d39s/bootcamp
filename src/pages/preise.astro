@@ -20,11 +20,11 @@ import BenefitsCardTicket from '../components/bootcamp/BenefitsCardTicket.astro'
                 Tickets & Memberships
             </CatchHeader>
             <div class="container section">
-                <h2>Tickets</h2>
+                <h2 class="section-headline">Tickets</h2>
                 <p class="p-spacer p-line">
                     Die Gültigkeit der Tickets beträgt nach Kauf sechs Monate.
                 </p>
-                <div class="col-4 unstyled">
+                <div class="col-4 col-md-2 col-xs-1 unstyled">
                     <a href="/" target="_blank" class="benefit-card">
                         <BenefitsCardTicket icon='mdi:ticket' headline='Onlineticket' price='6,99€' tagline='Online'>
                             Das Ticket gilt für alle Onlineklassen
@@ -43,11 +43,11 @@ import BenefitsCardTicket from '../components/bootcamp/BenefitsCardTicket.astro'
                 </div>
             </div>
             <div class="container section">
-                <h2>Unlimited Online</h2>
+                <h2 class="section-headline">Unlimited Online</h2>
                 <p class="p-spacer p-line">
                     Nimm so oft du möchtest Online BootCamp Training teil. Nach Ablauf der Mindestvertragslaufzeit monatlich kündbar.
                 </p>
-                <div class="col-4 unstyled">
+                <div class="col-4 col-md-2 col-xs-1 unstyled">
                     <a href="/" target="_blank">
                         <BenefitsCard icon='arcticons:calendar-3' headline='34,99€ / Monat'>
                             Mindestvertragslaufzeit: <br />
@@ -75,14 +75,14 @@ import BenefitsCardTicket from '../components/bootcamp/BenefitsCardTicket.astro'
                 </div>
             </div>
             <div class="container section">
-                <h2>Unlimited Outdoor & Online</h2>
+                <h2 class="section-headline">Unlimited Outdoor & Online</h2>
                 <p class="p-line">
                     Nimm so oft du möchtest am Outdoor und Online BootCamp Training teil. Nach Ablauf der Mindestvertragslaufzeit monatlich kündbar. 
                 </p>
                 <p class="p-spacer p-smaller p-line">
                     *Als Vertragsmitglied kannst du einmal monatlich einen Trainingspartner, der noch kein Mitglied bei uns ist, kostenlos zum Outdoor BootCamp Kurs mitbringen.
                 </p>
-                <div class="col-4 unstyled">
+                <div class="col-4 col-md-2 col-xs-1 unstyled">
                     <a href="/" target="_blank">
                         <BenefitsCard icon='arcticons:calendar-3' headline='49,99€ / Monat'>
                             Mindestvertragslaufzeit: <br />
@@ -110,7 +110,7 @@ import BenefitsCardTicket from '../components/bootcamp/BenefitsCardTicket.astro'
                 </div>
             </div>
             <div class="container section">
-                <h2>Unlimited Outdoor, Indoor & Online</h2>
+                <h2 class="section-headline">Unlimited Outdoor, Indoor & Online</h2>
                 <p class="p-line">
                     Nimm so oft du möchtest am Outdoor, Indoor und Online BootCamp Training teil. 
                     Nach Ablauf der Mindestvertragslaufzeit monatlich kündbar. 
@@ -118,7 +118,7 @@ import BenefitsCardTicket from '../components/bootcamp/BenefitsCardTicket.astro'
                 <p class="p-spacer p-smaller p-line">
                     *Als Vertragsmitglied kannst du einmal monatlich einen Trainingspartner, der noch kein Mitglied bei uns ist, kostenlos zum Outdoor BootCamp Kurs mitbringen.
                 </p>
-                <div class="col-4 unstyled">
+                <div class="col-4 col-md-2 col-xs-1 unstyled">
                     <a href="/" target="_blank">
                         <BenefitsCard icon='arcticons:calendar-3' headline='69,99€ / Monat'>
                             Mindestvertragslaufzeit: <br />
@@ -160,5 +160,32 @@ import BenefitsCardTicket from '../components/bootcamp/BenefitsCardTicket.astro'
     }
     .p-line {
         line-height: 1.8em;
+    }
+    @media (max-width: 1000px) {
+        .section-headline{
+            margin: 0.9em 0 0.3em;
+        }
+        .p-spacer{
+            margin: 0.8em 0 1.5em;
+        }
+        .p-line{
+            line-height: 1.5em;
+        }
+        .p-smaller{
+            font-size: 0.8em;
+        }
+    }
+    @media (max-width: 550px) {
+        .col-sm-2{
+            gap: 15px;
+            grid-auto-rows: max-content;
+        }
+        .p-line{
+            font-size: 0.9em;
+            line-height: 1.5em;
+        }
+        .p-smaller{
+            font-size: 0.8em;
+        }
     }
 </style>
