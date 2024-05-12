@@ -105,13 +105,13 @@ import logo from "../assets/bc-logo.svg"
 	const menu = document.querySelector(".menu-list");
 	const menuItems = document.querySelectorAll(".menu-item");
 	const hamburger = document.querySelector<HTMLButtonElement>(".burger-menu");
-	const closeIcon= document.querySelector<HTMLDivElement>(".icon-close");
+	const closeIcon= document.querySelector<HTMLSpanElement>(".icon-close");
 	const menuIcon = document.querySelector<HTMLDivElement>(".icon-burger");
 	if(
 		hamburger === null
 		|| !(hamburger instanceof HTMLButtonElement)
 		|| closeIcon === null
-		|| !(closeIcon instanceof HTMLDivElement)
+		|| !(closeIcon instanceof HTMLSpanElement)
 		|| menuIcon === null
 		|| !(menuIcon instanceof HTMLDivElement)
 	) throw Error("error initializing menu");
