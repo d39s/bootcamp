@@ -2,101 +2,185 @@
 import type {ImageMetadata} from 'astro';
 import {Image} from 'astro:assets';
 ---
-
-<div class="container">
-    <div class="teaser">
-        <h1><span>Das</span> Bootcamp</h1>
-        <div class="teaser-secondary">
-            <img class="teaser-gif" src="https://future.dasbootcamp.de/wp-content/uploads/2023/09/kreis-schrift-bootcamp_1_1_newFontFix2-1.svg" alt="Bootcamp | Community, Nature, Outdoor, Training" width="200" height="200">
-            <div class="button-list">
-                <a href="/">
-                    <button class="button">Yoga-Kurse</button>
-                </a>
-                <a href="/">
-                    <button class="button">Bootcamp Kurse</button>
-                </a>
-                <a href="/">
-                    <button class="button">Fitflow Retreat</button>
-                </a>
-            </div>
+<div class="section">
+    <div class="container">
+        <div class="teaser">
+            <h1>
+                <span class="sub">
+                    Train in the <br>Nature
+                </span>
+                <span class="pre">
+                    Das
+                </span>
+                 Bootcamp 
+                 <span class="loc">
+                    Leipzig
+                </span>
+            </h1>
         </div>
-
+    </div>
+    <div id="slider">
+        <div class="slide-1" style="background-image: url('https://future.dasbootcamp.de/wp-content/uploads/2023/09/16150b57-53af-4305-82e4-fbd0c99efcac.webp');">
+            <div class="btn-container">
+                <button class="button-main transition">
+                    <a href="">
+                        Bootcamp Kurse
+                    </a>
+                </button>
+                <button class="button-main transition">
+                    <a href="">
+                        Yoga Kurse
+                    </a>
+                </button>
+                <button class="button-main transition">
+                    <a href="">
+                        Fitflow Retreat
+                    </a>
+                </button>
+            </div>
+            
+        </div>
+        <img class="gif" height="250" width="250" src="https://future.dasbootcamp.de/wp-content/uploads/2023/09/kreis-schrift-bootcamp_1_1_newFontFix2-1.svg">
     </div>
 </div>
 
-<style>
 
+<style>
+    .section{
+        position: relative;
+        margin: 0;
+        padding: 2em 0;
+    }
     .teaser{
         position: relative;
-        display: grid;
-        grid-template-columns: auto 1fr;
+        height: 80vh;
+        width: 100%;
+    }
+    .teaser::before{
+        position: absolute;
+        content: "";
+        border: 1px dashed var(--bootcamp-dark-orange);
+        border-radius: 65px;
+        width: 500px;
+        height: 550px;
+        left: 285px;
+        top: -70px;
     }
     h1{
-        width: 700px;
-        margin: 0;
-        font-size: 8em;
-        line-height: 1em;
+        position: relative;
+        width: 910px;
+        margin: 0.7em 0;
         color: var(--bootcamp-light-orange);
+        font-size: 8.3em;
+        line-height: 1.0;
+        font-weight: 300;
+        text-transform: uppercase;
+        z-index: 5;
     }
-    h1>span{
-        margin-left: 1em;
+    h1 .pre{
+        display: block;
+        padding-left: 1em;
     }
-    .teaser-secondary{
-        justify-self: center;
+    h1 .loc{
+        display: block;
+        text-align: right;
+        font-size: 55px;
     }
-    .teaser-gif{
+    h1 .sub{
         position: absolute;
-        right: 0px;
-        top: -65px;
-        z-index: 1;
+        top: 20px;
+        right: 0;
+        font-size: 38px;
+        line-height: 1.2;
+        text-align: right;
     }
-    .button-list{
+    #slider{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 60%;
+    }
+    #slider > div{
         display: grid;
-        grid-template-columns: 1fr;
-        gap: 30px;
-        width: 270px;
-        margin-top: 240px;
+        height: 90vh;
+        border-bottom-left-radius: 75px;
+        background-position: center;
+        background-size: cover;
     }
-    .button{
+    #slider .gif{
+        position: absolute;
+        bottom: -112px;
+        left: -45px;
+    }
+    .btn-container{
+        align-self: end;
+        justify-self: end;
+        width: 375px;
+        margin-bottom: 65px;
+        margin-right: 120px;
+    }
+    .button-main {
         width: 100%;
-        padding: 12px 16px;
-        color: var(--bootcamp-dark-orange);
         font-weight: 400;
         background-color: var(--bootcamp-light-orange);
         border: 2px solid var(--bootcamp-light-orange);
-        border-radius: 15px;
-        outline: 0;
     }
-    .button:hover{
+    .button-main:hover{
+        opacity: 1;
         border: 2px solid var(--bootcamp-dark-orange);
-        cursor: pointer;
+    }
+    .button-main a{
+        display: block;
+        color: var(--bootcamp-dark-orange);
+        text-decoration: none;
     }
     @media (max-width: 1000px){
-        .teaser{
-            grid-template-columns: 1fr;
-        }
-        h1{
-            width: 350px;
-            font-size: 3em;
-        }
-        .teaser-gif{
-           height: 130px;
-           width: 130px;
-            top: -30px;
-        }
-        .button-list{
-            margin-top: 45px;
-        }
     }
     @media (max-width: 740px) {
+        .section{
+            padding-bottom: 30px;
+        }
+        .teaser{
+            height: auto;
+        }
+        .teaser::before{
+            display: none;
+        }
         h1{
             width: 100%;
-            font-size: 3em;
+            margin-bottom: 0;
+            font-size: 5em;
+            text-align: center;
         }
-        .teaser-gif{
-           height: 80px;
-           width: 80px;
-            top: -30px;
+        h1 .sub{
+            display: block;
+            position: relative;
+            margin: 0 auto 40px;
+            font-size: 30px;
+            width: 160px;
+            text-align: center;
+        }
+        h1 .sub br{
+            display: none;
+        }
+        h1 .pre{
+            padding: 0;
+        }
+        h1 .loc{
+            display: block;
+            text-align: center;
+            font-size: 35px;
+        }
+        #slider{
+            position: relative;
+            width: 100%;
+            border-bottom-right-radius: 75px;
+        }
+        #slider > div{
+            height: 720px;
+        }
+        .btn-container{
+            margin: 0 auto 35px;
         }
     }
 </style>

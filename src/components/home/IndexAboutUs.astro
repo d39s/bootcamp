@@ -51,7 +51,9 @@ import {Image} from 'astro:assets';
 		margin: 0 0 20px;
 	}
 	.image-wrapper{
-		margin-right: -135px;
+		position: absolute;
+		right: 0;
+		width: 54%;
 		padding-left: 50px;
 	}
 	.scope{
@@ -77,11 +79,15 @@ import {Image} from 'astro:assets';
 		.scope{
 			padding-top: 10px;
 		}
-		
+		.image-wrapper{
+			width: 56%;
+		}
 	}
 
 	@media (max-width: 740px) {
 		.image-wrapper{
+			position: relative;
+			width: 100%;
 			margin-right: 0;
 			padding-left: 0;
 			padding-top: 2em;
