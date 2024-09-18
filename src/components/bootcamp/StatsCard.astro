@@ -16,19 +16,30 @@ const {number, descr} = Astro.props;
 
 <style>
     .stat-card{
-        margin: 0 1.5em;
-        padding: 2.2em 0;
+        padding: 2.0em 0;
         text-align: center;
         border: 1px dashed var(--bootcamp-dark-orange);
         border-radius: 60px;
     }
     .number{
-        padding: 0.1em 0 0.5em;
+        padding: 0.1em 0 0.2em;
         color: var(--bootcamp-light-orange);
-        font-size: 3.5em;
+        font-size: 2.5em;
     }
     .descr{
         color: var(--bootcamp-dark-orange);
         font-size: 0.9em;
+    }
+    @media(max-width: 768px){
+        .stat-card{
+            padding: 1.4em 0;
+            border-radius: 30px;
+        }
+        .number{
+            font-size: 1.7em;
+        }
+        .descr{
+            font-size: 0.8em;
+        }
     }
 </style>

@@ -1,6 +1,6 @@
 ---
-import type {ImageMetadata} from 'astro';
 import {Image} from 'astro:assets';
+import bg from '../../assets/layout/bootcamp_bg.png';
 ---
 
 <div class="container grid-40-60">
@@ -27,7 +27,7 @@ import {Image} from 'astro:assets';
 		
     </div>
     <div class="image-wrapper">
-		<img width="1609" height="2560" src="https://dasbootcamp.de/wp-content/uploads/2023/09/6erPic-scaled.webp">
+		<Image src={bg} alt="Bootcamp Leipzig Impressionen" width="1609"/>
 	</div>
 </div>
 

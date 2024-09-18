@@ -4,15 +4,33 @@ import {Image} from 'astro:assets';
 import StatsCard from '../../components/bootcamp/StatsCard.astro';
 ---
 
-<div class="container col-4 col-md-2">
-    <StatsCard number={9} descr='Spots'></StatsCard>
-    <StatsCard number={22} descr='Kurse'></StatsCard>
-    <StatsCard number={16} descr='Coaches'></StatsCard>
-    <StatsCard number={3} descr='Retreat'></StatsCard>
+<div class="container">
+    <div class="stats-grid">
+        <StatsCard number={10} descr='Spots'></StatsCard>
+        <StatsCard number={29} descr='Kurse'></StatsCard>
+        <StatsCard number={20} descr='Coaches'></StatsCard>
+    </div>
 </div>
 
 <style>
-
+    .stats-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 45px;
+        margin: 0 10%;
+    }
+    @media(max-width: 1000px){
+        .stats-grid{
+            gap: 30px;
+            margin: 0 5%;
+        }
+    }
+    @media(max-width: 768px){
+        .stats-grid{
+            gap: 15px;
+            margin: 0;
+        }
+    }
 </style>
 
 <script>

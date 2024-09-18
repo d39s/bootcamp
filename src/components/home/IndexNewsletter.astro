@@ -1,11 +1,11 @@
 ---
-import type {ImageMetadata} from 'astro';
 import {Image} from 'astro:assets';
+import fitflow from '../../assets/layout/bootcamp-fitflow_rekord_juli_2023.webp';
 ---
 
 <div class="container grid-50-50">
     <div class="media-round">
-        <img width="675" height="1200" src="https://dasbootcamp.de/wp-content/uploads/2023/09/BootCamp-FitFlow_Rekord_Juli_2023_@E.S-Photographie-149-675x1200.webp">
+        <Image src={fitflow} alt="Bootcamp Leipzig - FitFlow Rekord Juli 2023" width="675"/>
     </div>
     <div class="newsletter">
         <div class="topic">Newsletter</div>
