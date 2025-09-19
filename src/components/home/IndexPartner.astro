@@ -1,0 +1,55 @@
+---
+import PartnerCard from '../../components/bootcamp/PartnerCard.astro';
+---
+
+<div class="container">
+
+    <h2 class="headline">
+        Unsere <span class="highlighter">Partner</span>
+    </h2>
+
+    <div class="partner-list">
+
+        <PartnerCard name="DHL" img_path="dhl" img_height={205} link="" />
+        <PartnerCard name="Helios" img_path="helios" img_height={205} link="" />
+        <PartnerCard name="" img_path="ferchau" img_height={205} link="" />
+        <PartnerCard name="" img_path="prisma" img_height={205} link="" />
+        <PartnerCard name="" img_path="die-mess-profis" img_height={205} link="" />
+        <PartnerCard name="" img_path="cross_deluxe" img_height={205} link="" />
+        <PartnerCard name="" img_path="sv_tapfer" img_height={205} link="" />
+        <PartnerCard name="" img_path="sv_lindenau" img_height={205} link="" />
+        <PartnerCard name="" img_path="tus_leutzsch" img_height={205} link="" />
+        <PartnerCard name="" img_path="leipzig_for_friends" img_height={205} link="" />
+        <PartnerCard name="" img_path="urban_sports_club" img_height={205} link="" />
+        <PartnerCard name="" img_path="wellpass" img_height={205} link="" />
+        <PartnerCard name="" img_path="classpass" img_height={205} link="" />
+        <PartnerCard name="" img_path="hansefit" img_height={205} link="" />
+        <PartnerCard name="" img_path="aok" img_height={205} link="" />
+
+    </div>
+
+</div>
+
+<style>
+
+.partner-list{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1000px) {
+    .partner-list{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .partner-list{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+}
+
+</style>
+

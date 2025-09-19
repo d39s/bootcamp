@@ -1,0 +1,158 @@
+---
+---
+
+<div class="container">
+    <div class="media-round v_placeholder">
+        <video poster="" autoplay="true" loop="true" muted="muted" playsinline="true">
+            <!-- Loop -->
+            <source type="video/mp4" src="https://cdn.chicken69.dev/stuff/DarkerVid%20%281%29_1_3.mp4">
+        </video>
+        <div class="video-btn-wrapper">
+            <div id="openModalBtn" class="video-btn transition">
+            </div>
+        </div>
+    </div>
+</div>
+
+<dialog class="video-modal" id="videoModal">
+    <form method="dialog" class="modal-action">
+        <button class="video-modal-close">×</button>
+    </form>
+    <video id="modalVideo" controls loop="false">
+        <!-- Trailer -->
+        <source src="https://cdn.chicken69.dev/stuff/DasBootcamp_Fitness_v02.mp4" type="video/mp4">
+    </video>
+</dialog>
+
+<style>
+
+    .v_placeholder{
+        position: relative;
+		height: 800px;
+        max-height: 100%;
+		margin: 65px auto;
+	}
+	.v_placeholder > video{
+        position: relative;
+		object-fit: fill;
+        z-index: 1;
+	}
+    .video-btn-wrapper{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        pointer-events: auto;
+    }
+    .video-btn{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 165px;
+        width: 165px;
+        background-color: var(--bootcamp-dark-orange);
+        border-radius: 50%;
+    }
+    .video-btn::before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 44px solid var(--bootcamp-light-orange);
+        border-top: 24px solid transparent;
+        border-bottom: 24px solid transparent;
+        margin-left: 6px;
+    }
+    .video-btn:hover{
+        background-color: var(--bootcamp-light-orange);
+        cursor: pointer;
+    }
+
+    .video-btn:hover::before{
+        border-left: 44px solid var(--bootcamp-dark-orange);
+    }
+
+    .video-modal{
+        background: transparent;
+        border: none;
+    }
+
+    .modal-action{
+        display: flex;
+        justify-content: right;
+    }
+
+    .video-modal-close{
+        margin-right: -7px;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        font-size: 32px;
+        color: #fff;
+    }
+
+    .video-modal-close:focus, 
+    .video-modal-close:focus-within,
+    .video-modal-close:focus-visible{
+        border: none;
+        box-shadow: none;
+        outline: none;
+    }
+
+    #modalVideo{
+        width: 100%;
+        max-width: 1360px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 8px;
+    }
+
+    .video-modal::backdrop {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    @media(max-width: 1000px){
+        .v_placeholder{
+            width: 100%;
+            height: auto;
+            margin: 35px auto;
+            aspect-ratio: 1/1;
+        }
+        .video-modal{
+            padding: 0;
+        }
+    }
+
+    @media(max-width: 768px) {
+        .video-btn{
+            height: 85px;
+            width: 85px;
+        }
+        #modalVideo {
+            max-width: 100%;
+        }
+    }
+
+</style>
+
+<script>
+
+const openModalBtn = document.getElementById("openModalBtn") as HTMLButtonElement | null;
+const modal = document.getElementById("videoModal") as HTMLDialogElement | null;
+const video = document.getElementById("modalVideo") as HTMLVideoElement | null;
+
+if (openModalBtn && modal && video) {
+    openModalBtn.addEventListener("click", function() {
+        modal.showModal();
+        video.play();
+    });
+
+    modal.addEventListener("close", function() {
+        video.pause();
+    });
+}
+
+</script>

@@ -1,46 +1,31 @@
 ---
 import type {ImageMetadata} from 'astro';
 import {Image} from 'astro:assets';
-
-import partner_rb from "../../assets/partner/partner-rb.svg";
-import partner_ferchau from "../../assets/partner/partner-ferchau.svg";
-import partner_helios from "../../assets/partner/partner-helios.svg";
-import partner_prisma from "../../assets/partner/partner-prisma.svg";
-
 interface Props {
-
+    name: string;
+    img_path: string;
+    img_height: number;
+    link: string;
 }
 
-const {} = Astro.props;
+const { name, img_path, img_height, link} = Astro.props;
+// Dynamischer Import des Bildes
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/partner/*.{jpeg,jpg,png}');
+const imagePath = `/src/assets/partner/${img_path}.png`;
+
+if (!images[imagePath]) {
+  throw new Error(`"${imagePath}" not found`);
+}
+
+const { default: image } = await images[imagePath]();
 ---
 
-
-<div class="col-4 col-sm-2 dashed-border">
-    <div><Image src={partner_rb} alt="Logo Red Bull Leipzig" height={90}/></div>
-    <div><Image src={partner_ferchau} alt="Logo Ferchau Leipzig" height={45}/></div>
-    <div><Image src={partner_helios} alt="Logo Helios Leipzig" height={40}/></div>
-    <div><Image src={partner_rb} alt="Logo Red Bull Leipzig" height={100}/></div>
-    <div><Image src={partner_ferchau} alt="Logo Ferchau Leipzig" height={50}/></div>
-    <div><Image src={partner_helios} alt="Logo Helios Leipzig" height={40}/></div>
-    <div><Image src={partner_helios} alt="Logo Helios Leipzig" height={40}/></div>
+<div>
+    <Image src={imagePath} alt={`Logo ${name}`} width={img_height} height="100"/>
 </div>
 
-
-
 <style>
-.dashed-border {
-    grid-auto-rows: 1fr;
-}
-
-.dashed-border > div {
-    border: 1px dashed var(--bootcamp-dark-orange);
-    border-radius: 40px;
-    padding: 1.1em 1em 1.5em;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-}
-.dashed-border > img {
-
-}
+    img{
+        width: 100%;
+    }
 </style>
