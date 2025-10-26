@@ -160,6 +160,7 @@
 	font-style: normal;
 	font-display: swap;
 }
+
 body {
 	font-family: 'Poppins', sans-serif;
 	margin: 0;
@@ -575,13 +576,7 @@ hr {
 
 /**/
 
-.bg-contact{
-  margin-bottom: -50px!Important;
-  padding-top: 2.5em;
-  background-image: url(https://future.dasbootcamp.de/wp-content/uploads/2023/09/03e75053-d34a-4fc7-957f-7bec6d4e0d39.webp#302);
-  background-size: cover;
-  background-position: top center;
-}
+
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 

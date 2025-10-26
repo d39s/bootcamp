@@ -8,7 +8,9 @@ import IndexTeaser from '../components/home/IndexTeaser.astro';
 import IndexWelcome from '../components/home/IndexWelcome.astro';
 import IndexSocial from '../components/home/IndexSocial.astro';
 import IndexStats from '../components/home/IndexStats.astro';
+import IndexVideo from '../components/home/IndexVideo.astro';
 import IndexAboutUs from '../components/home/IndexAboutUs.astro';
+import IndexPartner from '../components/home/IndexPartner.astro';
 import IndexNewsletter from '../components/home/IndexNewsletter.astro';
 import IndexCoaches from '../components/home/IndexCoaches.astro';
 import IndexContact from '../components/home/IndexContact.astro';
@@ -24,9 +26,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<Header />
 		<main>
 			<!-- Teaser -->
-			<div class="section">
-				<IndexTeaser />
-			</div>
+			<IndexTeaser />
 
 			<!-- Welcome -->
 			<div class="section">
@@ -45,14 +45,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 			<!-- Video -->
 			<div class="section bg-gradient">
-				<div class="container">
-					<div class="media-round v_placeholder"></div>
-				</div>
+				<IndexVideo />
 			</div>
 			
 			<!-- About Us -->
 			<div class="section bg-light">
 				<IndexAboutUs />
+			</div>
+
+			<!-- Partner -->
+			 <div class="section bg-light">
+				<IndexPartner />
 			</div>
 
 			<!-- Newsletter -->
@@ -66,7 +69,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			</div>
 
 			<!-- Kontakt -->
-			<div class="section bg-light bg-contact">
+			<div class="section bg-light">
 				<IndexContact />
 			</div>
 
@@ -89,20 +92,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		padding: 2.5em 0;
 		background-color: var(--bootcamp-background-light);
 	}
-	
-	.v_placeholder{
-		height: 800px;
-		width: 800px;
-		margin: 0 auto;
-		background-color: #fff;
-	}
-@media(max-width: 1000px){
-	.v_placeholder{
-		width: 100%;
-		height: auto;
-		aspect-ratio: 1/1;
-	}
-}
 
 	@media (max-width: 1000px) {
 		.section.bg-gradient{

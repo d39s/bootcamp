@@ -1,6 +1,6 @@
 ---
-import type {ImageMetadata} from 'astro';
 import {Image} from 'astro:assets';
+import bg from '../../assets/layout/bootcamp_bg.png';
 ---
 
 <div class="container grid-40-60">
@@ -27,7 +27,7 @@ import {Image} from 'astro:assets';
 		
     </div>
     <div class="image-wrapper">
-		<img width="1609" height="2560" src="https://dasbootcamp.de/wp-content/uploads/2023/09/6erPic-scaled.webp">
+		<Image src={bg} alt="Bootcamp Leipzig Impressionen" width="1609"/>
 	</div>
 </div>
 
@@ -51,7 +51,9 @@ import {Image} from 'astro:assets';
 		margin: 0 0 20px;
 	}
 	.image-wrapper{
-		margin-right: -135px;
+		position: absolute;
+		right: 0;
+		width: 54%;
 		padding-left: 50px;
 	}
 	.scope{
@@ -77,11 +79,15 @@ import {Image} from 'astro:assets';
 		.scope{
 			padding-top: 10px;
 		}
-		
+		.image-wrapper{
+			width: 56%;
+		}
 	}
 
 	@media (max-width: 740px) {
 		.image-wrapper{
+			position: relative;
+			width: 100%;
 			margin-right: 0;
 			padding-left: 0;
 			padding-top: 2em;

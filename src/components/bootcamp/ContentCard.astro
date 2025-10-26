@@ -1,21 +1,29 @@
 ---
-import type {ImageMetadata} from 'astro';
-import {Image} from 'astro:assets';
-import { Icon } from 'astro-icon/components'
+import { getImage } from 'astro:assets';
 
 interface Props {
-    imagePath: string;
+    imageName: string;
     textPosition: string;
 }
 
-const {imagePath, textPosition} = Astro.props;
-const imageUrl = 'url("' + imagePath + '")' ;
-var orderImg = '1';
-var orderText = '2';
-if(textPosition == 'left'){
-    orderImg = '2';
-    orderText = '1';
+const { imageName, textPosition } = Astro.props;
+
+// Dynamischer Import des Bildes
+const images = import.meta.glob('/src/assets/layout/*.{jpeg,jpg,png,gif}');
+const imagePath = `/src/assets/layout/${imageName}`;
+
+if (!images[imagePath]) {
+  throw new Error(`Image "${imagePath}" not found`);
 }
+
+const { default: image } = await images[imagePath]() as { default: ImageMetadata };
+
+// Generieren Sie die optimierte Bildquelle
+const optimizedImage = await getImage({src: image, format: 'webp'});
+
+const imageUrl = `url("${optimizedImage.src}")`;
+const orderImg = textPosition === 'left' ? '2' : '1';
+const orderText = textPosition === 'left' ? '1' : '2';
 ---
 
 <div class="box-wrapper box-wrapper-margin">
@@ -26,10 +34,10 @@ if(textPosition == 'left'){
 </div>
 
 <style define:vars={{imageUrl, orderText, orderImg}}>
-    .box-text{
+    .box-text {
         order: var(--orderText);
     }
-    .box-bg{
+    .box-bg {
         background-image: var(--imageUrl);
         order: var(--orderImg);
     }

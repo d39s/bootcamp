@@ -4,14 +4,13 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CatchHeader from '../components/bootcamp/CatchHeader.astro';
 import BenefitsCard from '../components/bootcamp/BenefitsCard.astro';
-import PartnerCard from '../components/bootcamp/PartnerCard.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { Image } from "astro:assets"
 import event from "../assets/firmen/event.png"
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="de">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
@@ -133,10 +132,6 @@ import event from "../assets/firmen/event.png"
                         </a>
                     </div>
                 </div>
-            </div>
-            <div class="container section">
-                <h2>Unsere Partner</h2>
-                <PartnerCard />
             </div>
 
 		</main>
