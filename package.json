@@ -17,7 +17,7 @@
     "@iconify-json/arcticons": "^1.1.100",
     "@iconify-json/mdi": "^1.1.66",
     "@iconify-json/ph": "^1.1.12",
-    "astro": "^5.1.3",
+    "astro": "^6.0.0",
     "astro-icon": "^1.1.0",
     "typescript": "^6.0.0"
   }
