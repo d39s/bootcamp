@@ -1,6 +1,4 @@
 ---
-import type {ImageMetadata} from 'astro';
-import {Image} from 'astro:assets';
 
 interface Props {
     name: string;
@@ -11,7 +9,7 @@ interface Props {
     img_path: string;
 }
 
-const {name, time, descr, location, href, img_path} = Astro.props;
+const {name, descr, location, href, img_path} = Astro.props;
 ---
     <div class="course-card">
         <div class="inner">

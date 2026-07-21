@@ -8,7 +8,7 @@ interface Props {
     link: string;
 }
 
-const { name, img_path, img_height, link} = Astro.props;
+const { name, img_path, img_height} = Astro.props;
 // Dynamischer Import des Bildes
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/partner/*.{jpeg,jpg,png}');
 const imagePath = `/src/assets/partner/${img_path}.png`;
@@ -17,7 +17,6 @@ if (!images[imagePath]) {
   throw new Error(`"${imagePath}" not found`);
 }
 
-const { default: image } = await images[imagePath]();
 ---
 
 <div>
